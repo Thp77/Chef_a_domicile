@@ -50,7 +50,7 @@ class Product implements FilableInterface
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="products")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $chief;
 

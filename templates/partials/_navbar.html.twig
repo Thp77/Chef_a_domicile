@@ -1,6 +1,6 @@
 <!-- Mise en place de la barre de navigation du site -->
         
-            <nav class="navbar navbar-expand-md navbar-light ">
+            <nav class="navbar navbar-expand-md navbar-light bg-info">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="{{ path('home') }}"><svg id="lLogo" xmlns="http://www.w3.org/2000/svg" width="150" height="120" viewBox="0 0 220 198">
                     <text id="CADO" data-name="CADO" transform="translate(110 83)" fill="#fff" font-size="82" font-family="Impact" letter-spacing="0.057em"><tspan x="-45.859" y="0">CA</tspan><tspan x="-47.401" y="70">DO</tspan></text>
@@ -26,7 +26,7 @@
                                 <a class="nav-link">Réservation</a>
                             </li> #}
                             <li class="nav-item">
-                                <a class="nav-link" href="">À propos</a>
+                                <a class="nav-link" href="{{ path('about') }}">À propos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 {% if app.user %}
@@ -44,7 +44,7 @@
                            
                             {% if app.user %}   
                             <li class="nav-item ">  
-                                <span class="nav-link text-info dropdown-toggle" id="profilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bonjour {{ app.user.firstname|capitalize }} !</span>
+                                <span class="nav-link text-danger dropdown-toggle" id="profilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bonjour {{ app.user.firstname|capitalize }} !</span>
                                 <ul class="dropdown-menu" aria-labelledby="profilDropdown">
                                     <li><a class="dropdown-item" href="">Modifier votre profil</a></li>
                                     <li><a class="dropdown-item" href="

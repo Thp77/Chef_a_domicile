@@ -6,3 +6,7 @@
 home:
   path: /
   controller: App\Controller\HomeController::indexAction
+
+about:
+  path: /about
+  controller: App\Controller\AboutController::indexAction
