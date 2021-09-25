@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<h1>Nos cuisiniers</h1>
+	<h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quas, laborum ullam consectetur quos sint rerum molestiae quam fugiat voluptate placeat enim, quisquam obcaecati sunt. Dolorem repudiandae quibusdam omnis ad!</h2>
+
+	{% for cook in cooks %}
+		<img src="{{ cook.photo }}" alt="{{ cook.name }}">
+		<h3><a href="{{ path('cook_show_products', {id: cook.id }) }}">{{ cook.firstname }} {{ cook.name }}</a></h3>
+		<p>{{ cook.description }}</p>
+
+
+	{% endfor %}
+
+
+{% endblock %}

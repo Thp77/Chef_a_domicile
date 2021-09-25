@@ -36,6 +36,28 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+    public function findByRole($value)
+    {
+        return $this->createQueryBuilder('u')
+            ->andWhere('u.roles LIKE :val')
+            ->setParameter('val', '%'.$value.'%')           
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+
+    // tentative d'appeler les produits créés par le chef par son ID
+    // public function findByUserIdProductsMade($id)
+    // {
+    //     return $this->createQueryBuilder('p')
+    //         ->andWhere('p.chief_id = :val')
+    //         ->setParameter('val', $id)
+    //         ->getQuery()
+    //         ->getResult()
+    //         ;
+    // }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

@@ -17,7 +17,7 @@
                                 <a class="nav-link  {% if app.request.attributes.get('_route') == '/menu' %} active {% endif %}" href="#">Menus</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="">Cuisiniers</a>
+                                <a class="nav-link" href="{{ path('cook') }}">Cuisiniers</a>
                             </li>
                             {# <li class="nav-item">
                                 <a class="nav-link {% if app.request.attributes.get('_route') == '/product' %} active {% endif %}" href="{{ path('product_index') }}" >Réalisations</a>

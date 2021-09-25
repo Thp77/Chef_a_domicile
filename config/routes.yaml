@@ -4,9 +4,17 @@
 
 
 home:
-  path: /
+  path: /home
   controller: App\Controller\HomeController::indexAction
 
 about:
   path: /about
   controller: App\Controller\AboutController::indexAction
+
+cook:
+  path: /cook/list
+  controller: App\Controller\CookController::listAction
+
+cook_show_products:
+  path: cook/{id}/products
+  controller: App\Controller\ProductController::showProductsAction

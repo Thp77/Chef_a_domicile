@@ -90,6 +90,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Filable
      */
     private $menus;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $description;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -376,6 +381,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, Filable
                 $menu->setChief(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
