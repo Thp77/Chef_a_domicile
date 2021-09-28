@@ -6,7 +6,8 @@
 
 	{% for cook in cooks %}
 		<img src="{{ cook.photo }}" alt="{{ cook.name }}">
-		<h3><a href="{{ path('cook_show_products', {id: cook.id }) }}">{{ cook.firstname }} {{ cook.name }}</a></h3>
+		<h3>{{ cook.firstname }} {{ cook.name }}</h3>
+		<a href="{{ path('cook_show_products', {id: cook.id }) }}">Les produits qu'il propose</a>
 		<p>{{ cook.description }}</p>
 
 
