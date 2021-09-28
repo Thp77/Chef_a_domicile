@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<h1>Ce que propose </h1>
+	<h1>Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
 
-	Maintenant il faut rendre utilisable ce que je récupère dans le product controller
+	{% for product in products %}
+		<h2>{{ product.name }}</h2>
+		<p>{{ product.description }}</p>
+		<img src="{{ product.photo }}" alt="{{ product.name }}">
+	{% endfor %}
 
 
 {% endblock %}
