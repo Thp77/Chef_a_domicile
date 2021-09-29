@@ -39,6 +39,13 @@ class RegistrationController extends AbstractController
                 $fileService->upload($file, $user, 'photo');
             }
 
+            $role = $form->get('roles')->getData();
+            if ($role) {
+                $user->setRoles(['ROLE_CHEF']);
+            } else {
+                $user->setRoles(['ROLE_USER']);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();

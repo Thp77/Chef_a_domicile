@@ -17,6 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class RegistrationFormType extends AbstractType
 {
@@ -53,17 +54,16 @@ class RegistrationFormType extends AbstractType
             ])
         ->add('roles', CheckboxType::class, [
             'mapped' => false,
+            'required' => false,
             'label' => 'Cochez si vous proposez vos services de cuisiniers',
             ])
-        // ->add('roles', ChoiceType::class, [
-        //     'required' => true,
-        //     'multiple' => false,
-        //     'expanded' => false,
-        //     'choices'  => [
-        //         'Client' => 'ROLE_USER',
-        //         'Chef' => 'ROLE_CHIEF',           
-        //         ],
-        //     ])
+        ->add('description', TextareaType::class, [
+            'required' => false,
+            'label' => 'Décrivez vous en quelques mots !',
+            'label_attr' => ['class' => 'd-none',
+        'id' => 'labeldescri'],
+            'attr' => ['class' => 'd-none'],
+        ])
         ->add('file',FileType::class, [
             'mapped' => false,
             'label' => 'Photo de profil',

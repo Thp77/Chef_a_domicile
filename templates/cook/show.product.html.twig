@@ -1,13 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<h1>Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
+	{% if products %}
+		<h1>Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
 
-	{% for product in products %}
-		<h2>{{ product.name }}</h2>
-		<p>{{ product.description }}</p>
-		<img src="{{ product.photo }}" alt="{{ product.name }}">
-	{% endfor %}
-
-
+		{% for product in products %}
+			<h2>{{ product.name }}</h2>
+			<p>{{ product.description }}</p>
+			<img src="{{ product.photo }}" alt="{{ product.name }}">
+		{% endfor %}
+	{% else %}
+		<h1>Ce chef n'a pas de produit</h1>
+	{% endif %}
 {% endblock %}
