@@ -18,3 +18,7 @@ cook:
 cook_show_products:
   path: cook/{id}/products
   controller: App\Controller\ProductController::showProductsAction
+
+chef_new_products:
+  path: /chef/{id}/new/products
+  controller: App\Controller\Chef\ChefProductController::newAction
