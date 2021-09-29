@@ -55,7 +55,7 @@ class RegistrationFormType extends AbstractType
         ->add('roles', CheckboxType::class, [
             'mapped' => false,
             'required' => false,
-            'label' => 'Cochez si vous proposez vos services de cuisiniers',
+            'label' => 'Cochez si vous proposez vos services de cuisinier',
             ])
         ->add('description', TextareaType::class, [
             'required' => false,

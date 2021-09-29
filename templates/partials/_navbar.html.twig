@@ -46,10 +46,7 @@
                             <li class="nav-item ">  
                                 <span class="nav-link text-danger dropdown-toggle" id="profilDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Bonjour {{ app.user.firstname|capitalize }} !</span>
                                 <ul class="dropdown-menu" aria-labelledby="profilDropdown">
-                                    <li><a class="dropdown-item" href="">Modifier votre profil</a></li>
-                                    <li><a class="dropdown-item" href="
-				    {# {{ path('user_delete',{ id: app.user.id }) }} #}
-				    " data-bs-toggle="modal" data-bs-target="#deleteProfilModal">Supprimer votre compte</a></li>
+                                    <li><a class="dropdown-item" href="{{ path('user_edit',{ id: app.user.id }) }}">Modifier votre profil</a></li>
                                 </ul>           
                             </li>
                             {% endif %}
@@ -78,25 +75,4 @@
                 </div>
             </div>
     
-    <!-- Mise en place d'un modal de confirmation de confirmation avant suppression du profil -->     {% if app.user %} 
-            <div class="modal fade" id="deleteProfilModal" tabindex="-1" aria-labelledby="deleteProfilModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="deleteProfilModalLabel">Supprimer le compte</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Êtes-vous sûr de vouloir supprimer votre compte ?</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                            <a href="
-			    {# {{ path('user_delete',{ id: app.user.id }) }} #}
-			    "><button type="button" class="btn btn-primary">Supprimer</button></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endif %}
     

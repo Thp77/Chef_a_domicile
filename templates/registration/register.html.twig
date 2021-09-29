@@ -11,24 +11,8 @@
 
     {{ form(registrationForm) }}
 
-    {# {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }} #}
     <a href="{{ path('app_login') }}">Vous déjà un compte</a>
 {% endblock %}
 {% block javascripts %}
         <script src="{{ asset('js/register.js') }}"></script>
-
-{# 
-registration_form_roles -> id de la checkbox 
-registration_form_description -> id de la description
-
-$('#registration_form_roles').click #}
-
 {% endblock %}
