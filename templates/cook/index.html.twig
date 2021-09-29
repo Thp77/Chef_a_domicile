@@ -2,16 +2,21 @@
 
 {% block body %}
 	<h1>Nos cuisiniers</h1>
-	<h2>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quas, laborum ullam consectetur quos sint rerum molestiae quam fugiat voluptate placeat enim, quisquam obcaecati sunt. Dolorem repudiandae quibusdam omnis ad!</h2>
-
+	<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quas, laborum ullam consectetur quos sint rerum molestiae quam fugiat voluptate placeat enim, quisquam obcaecati sunt. Dolorem repudiandae quibusdam omnis ad!</h3>
+<div class="row mt-4">
 	{% for cook in cooks %}
-		<img src="{{ cook.photo }}" alt="{{ cook.name }}">
-		<h3>{{ cook.firstname }} {{ cook.name }}</h3>
-		<a href="{{ path('cook_show_products', {id: cook.id }) }}">Les produits qu'il propose</a>
-		<p>{{ cook.description }}</p>
-
-
+	<div class="col-12 col-sm-6 col-md-4 col-lg-3">
+		<div class="card my-4 mx-2">
+  			<img src="{{ cook.photo }}" class="card-img-top" alt="{{ cook.name }}">
+ 			 <div class="card-body text-center">
+    				<h5 class="card-title">{{ cook.firstname }} {{ cook.name }}</h5>
+    				<p class="card-text">{{ cook.description }}</p>
+    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn btn-primary">Les produits que le chef propose</a>
+  			</div>
+		</div>
+	</div>
 	{% endfor %}
+</div>
 
 
 {% endblock %}

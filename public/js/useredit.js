@@ -1,7 +1,7 @@
 let labelareaUser = document.getElementById("labelDescript")
 let textareaUser = document.getElementById("userDescription")
 let checkboxUser = document.getElementById("user_roles")
-console.log(textareaUser.classList.contains("d-none"))
+
 document.getElementById("user_roles").addEventListener("click", function() {
 
     if (textareaUser.classList.length > 0) {
