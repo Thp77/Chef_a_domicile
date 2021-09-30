@@ -19,9 +19,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('cook') }}">Cuisiniers</a>
                             </li>
+                            {% if is_granted('ROLE_CHEF') %}  
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('chef_new_products', { id: app.user.id }) }}" >Réalisations</a>
                             </li>
+                            {% endif %}
                             <li class="nav-item">
                                 <a class="nav-link">Réservation</a>
                             </li>

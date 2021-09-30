@@ -1,6 +1,8 @@
 let labelareaUser = document.getElementById("labelDescript")
-let textareaUser = document.getElementById("userDescription")
+let textareaUser = document.getElementById("user_description")
 let checkboxUser = document.getElementById("user_roles")
+
+console.log(textareaUser)
 
 document.getElementById("user_roles").addEventListener("click", function() {
 

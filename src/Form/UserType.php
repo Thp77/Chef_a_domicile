@@ -60,8 +60,7 @@ class UserType extends AbstractType
                 'label' => 'Décrivez vous en quelques mots !',
                 'label_attr' => ['class' => 'd-none',
             'id' => 'labelDescript'],
-                'attr' => ['class' => 'd-none',
-            'id' =>'userDescription'],
+                'attr' => ['class' => 'd-none'],
             ])
             ->add('file',FileType::class, [
                 'mapped' => false,
