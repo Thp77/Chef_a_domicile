@@ -50,18 +50,6 @@ class UserType extends AbstractType
                 'label' => 'Date de naissance',
                 'widget' => 'single_text',
                 ])
-            ->add('roles', CheckboxType::class, [
-                'mapped' => false,
-                'required' => false,
-                'label' => 'Cochez si vous proposez vos services de cuisinier',
-                ])
-            ->add('description', TextareaType::class, [
-                'required' => false,
-                'label' => 'Décrivez vous en quelques mots !',
-                'label_attr' => ['class' => 'd-none',
-            'id' => 'labelDescript'],
-                'attr' => ['class' => 'd-none'],
-            ])
             ->add('file',FileType::class, [
                 'mapped' => false,
                 'label' => 'Photo de profil',

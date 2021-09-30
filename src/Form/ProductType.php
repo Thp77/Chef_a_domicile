@@ -21,7 +21,7 @@ class ProductType extends AbstractType
             ->add('file',FileType::class, [
                 'mapped' => false,
                 'label' => 'Photo du met',
-                'required' => true,
+                'required' => false,
                 ])
             ->add('type', EntityType::class, ['class' => Type::class, 'choice_label' => 'type', 'multiple' => false, 'expanded' => false])
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer',
