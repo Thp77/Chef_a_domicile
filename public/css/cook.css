@@ -1,0 +1,55 @@
+.bouton{
+    background-color: rgb(228, 146, 88)!important;
+    border-radius: 10px!important;
+}
+
+.card-img-top{
+    width: 50%;
+    height: 50%;
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+
+.card-img-top:hover{
+    -webkit-transform:scale(1.05); /* Safari and Chrome */
+    -moz-transform:scale(1.05); /* Firefox */
+    -ms-transform:scale(1.05); /* IE 9 */
+    -o-transform:scale(1.05); /* Opera */
+     transform:scale(1.05);
+}
+.card-img-top, .card{
+    border-radius: 15%!important;
+
+  
+}
+
+.card{
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(64, 64, 64, 0.37); 
+    box-shadow: 5px 5px 15px 5px rgba(64, 64, 64, 0.37);
+    border-bottom: 3px solid rgb(240, 142, 107)!important;
+    border-right: 3px solid rgb(240, 142, 107)!important;
+    background-color: rgba(255, 255, 255, 0.514)!important;
+}
+
+
+
+
+body{
+    background-image: url(/images/crea.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+   
+}
+
+.cuisto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgb(245, 244, 244)!important;
+}
+

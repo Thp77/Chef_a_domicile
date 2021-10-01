@@ -28,14 +28,14 @@ class Main extends Fixture
         $faker = Faker\Factory::create();
 
         $user = new User();
-        $user->setUsername('thierry74')
-            ->setEmail('thierry@titi.fr')
-            ->setPassword($this->encoder->encodePassword($user, 'thierry1234'))
+        $user->setUsername('denis74')
+            ->setEmail('denis@de.fr')
+            ->setPassword($this->encoder->encodePassword($user, 'denis1234'))
             ->setRoles(['ROLE_ADMIN'])
-            ->setFirstname('thierry')
-            ->setName('Malherbe')
-            ->setPhone('0612421242')
-            ->setBirthday(new DateTimeImmutable('1986-01-28')) 
+            ->setFirstname('denis')
+            ->setName('devillers')
+            ->setPhone('0778252919')
+            ->setBirthday(new DateTimeImmutable('1986-11-11')) 
             ;
         $manager->persist($user);
         $manager->flush();
