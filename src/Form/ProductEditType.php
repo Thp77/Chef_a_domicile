@@ -11,7 +11,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class ProductType extends AbstractType
+class ProductEditType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -21,7 +21,7 @@ class ProductType extends AbstractType
             ->add('file',FileType::class, [
                 'mapped' => false,
                 'label' => 'Photo du met',
-                'required' => true,
+                'required' => false,
                 ])
             ->add('type', EntityType::class, ['class' => Type::class, 'choice_label' => 'type', 'multiple' => false, 'expanded' => false])
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer',

@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Service\FileService;
+use App\Form\ProductEditType;
 use App\Repository\UserRepository;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,7 +48,7 @@ class ChefProductController extends AbstractController
 			$entityManager->persist($product);
 			$entityManager->flush();
 
-			return $this->redirectToRoute('home');
+			return $this->redirectToRoute('chef_list_products', ['id' => $product->getChief()->getId()]);
 		}
 
 		return $this->render('chef/new.product.html.twig', [
@@ -58,7 +59,9 @@ class ChefProductController extends AbstractController
 
 	public function editAction(Request $request, Product $product, FileService $fileService): Response
 	{
-		$form = $this->createForm(ProductType::class, $product);
+		$chef = $product->getChief()->getId();
+		
+		$form = $this->createForm(ProductEditType::class, $product);
 		$form->handleRequest($request);
 
 		if ($form->isSubmitted() && $form->isValid()) {
@@ -75,7 +78,7 @@ class ChefProductController extends AbstractController
 
 			$this->getDoctrine()->getManager()->flush();
 
-			return $this->redirectToRoute('home');
+			return $this->redirectToRoute('chef_list_products', ['id' => $chef]);
 		}
 
 		return $this->renderForm('chef/product.edit.html.twig', [
