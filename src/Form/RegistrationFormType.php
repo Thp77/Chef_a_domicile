@@ -56,13 +56,13 @@ class RegistrationFormType extends AbstractType
             'mapped' => false,
             'required' => false,
             'label' => 'Cochez si vous proposez vos services de cuisinier',
+            'attr' => ['class' => 'checkbox_user_rol'],
             ])
         ->add('description', TextareaType::class, [
             'required' => false,
             'label' => 'Décrivez vous en quelques mots !',
-            'label_attr' => ['class' => 'd-none',
-        'id' => 'labeldescri'],
-            'attr' => ['class' => 'd-none'],
+            'label_attr' => ['class' => 'd-none label_user_descript'],
+            'attr' => ['class' => 'd-none textarea_user_descript'],
         ])
         ->add('file',FileType::class, [
             'mapped' => false,

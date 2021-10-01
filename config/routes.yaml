@@ -19,6 +19,22 @@ cook_show_products:
   path: cook/{id}/products
   controller: App\Controller\ProductController::showProductsAction
 
-chef_new_products:
+chef_new_product:
   path: /chef/{id}/new/products
   controller: App\Controller\Chef\ChefProductController::newAction
+
+chef_list_products:
+  path: /chef/{id}/list/products
+  controller: App\Controller\Chef\ChefProductController::listAction
+
+chef_edit_product:
+  path: /chef/{id}/edit/products
+  controller: App\Controller\Chef\ChefProductController::editAction
+
+chef_delete_product:
+  path: /chef/product/{id}/delete
+  controller: App\Controller\Chef\ChefProductController::deleteAction
+
+# menu_list:
+#   path: /menu/show
+#   controller: App\Controller\MenuController::showAction
