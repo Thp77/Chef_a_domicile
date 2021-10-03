@@ -35,6 +35,6 @@ chef_delete_product:
   path: /chef/product/{id}/delete
   controller: App\Controller\Chef\ChefProductController::deleteAction
 
-# menu_list:
-#   path: /menu/show
-#   controller: App\Controller\MenuController::showAction
+menu_list:
+   path: /menu/show
+   controller: App\Controller\MenuController::showAction

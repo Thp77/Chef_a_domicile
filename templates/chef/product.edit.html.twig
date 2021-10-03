@@ -4,4 +4,23 @@
 
 {{ form(form) }}
 
+<a data-bs-toggle="modal" data-bs-target="#deleteProductModal" href="{{ path('chef_delete_product', {id: product.id}) }}" class="btn btn-danger">Supprimer</a>
+<!-- Mise en place d'un modal de confirmation pour la suppression -->
+            <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteProductModalLabel">Suppression du produit</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Êtes-vous sûr de vouloir supprimer ce produit: {{ product.name }}?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                            <a href="{{ path('chef_delete_product', {id: product.id}) }}"><button type="button" class="btn btn-primary">Supprimer</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>	
 {% endblock %}
