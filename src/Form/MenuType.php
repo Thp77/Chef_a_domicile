@@ -23,11 +23,12 @@ class MenuType extends AbstractType
             ->add('name')
             ->add('price', IntegerType::class)
             ->add('genre', EntityType::class, ['class' => Genre::class, 'choice_label' => 'genre', 'multiple' => false, 'expanded' => false])
-            ->add('products', EntityType::class, [
+            ->add('aperitif', EntityType::class, [
                 'class' => Product::class, 
                 'choice_label' => 'name', 
                 'label' => 'Apéritifs',
                 'multiple' => true, 
+                'mapped' => false, 
                 'placeholder' => 'Choisissez vos apéritifs',
                 'expanded' => false,
                 'query_builder' => function (ProductRepository $productRepo) use ($user) {
@@ -38,11 +39,12 @@ class MenuType extends AbstractType
                     ->andWhere('c.id = :chiefId')
                     ->setParameter('chiefId', $user->getId());
                 },])
-            ->add('products', EntityType::class, [
+            ->add('entree', EntityType::class, [
                 'class' => Product::class, 
                 'choice_label' => 'name', 
                 'label' => 'Entrées',
                 'multiple' => true, 
+                'mapped' => false,
                 'placeholder' => 'Choisissez vos entrées',
                 'expanded' => false,
                 'query_builder' => function (ProductRepository $productRepo) use ($user) {
@@ -53,11 +55,12 @@ class MenuType extends AbstractType
                     ->andWhere('c.id = :chiefId')
                     ->setParameter('chiefId', $user->getId());
                 },])
-                ->add('products', EntityType::class, [
+                ->add('plat', EntityType::class, [
                     'class' => Product::class, 
                     'choice_label' => 'name', 
                     'label' => 'Plats',
                     'multiple' => true, 
+                    'mapped' => false,
                     'placeholder' => 'Choisissez vos plats',
                     'expanded' => false,
                     'query_builder' => function (ProductRepository $productRepo) use ($user) {
@@ -68,11 +71,12 @@ class MenuType extends AbstractType
                         ->andWhere('c.id = :chiefId')
                         ->setParameter('chiefId', $user->getId());
                     },])
-                ->add('products', EntityType::class, [
+                ->add('dessert', EntityType::class, [
                     'class' => Product::class, 
                     'choice_label' => 'name', 
                     'label' => 'Desserts',
                     'multiple' => true, 
+                    'mapped' => false,
                     'placeholder' => 'Choisissez vos desserts',
                     'expanded' => false,
                     'query_builder' => function (ProductRepository $productRepo) use ($user) {

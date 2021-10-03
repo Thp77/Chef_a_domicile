@@ -21,7 +21,12 @@ class ChefMenuController extends AbstractController
 	    $form->handleRequest($request);
     
 	    if ($form->isSubmitted() && $form->isValid()) {
-
+		//     dd($form['aperitif']->getData()->toString());
+		// $menu->addProduct($form['aperitif'])
+		// ->addProduct($form['entree'])
+		// ->addProduct($form['plat'])
+		// ->addProduct($form['dessert']);
+		
 		$menu->setChief($user);
 		$entityManager = $this->getDoctrine()->getManager();
 		$entityManager->persist($menu);
