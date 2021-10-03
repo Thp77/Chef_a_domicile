@@ -19,9 +19,19 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    // /**
-    //  * @return Product[] Returns an array of Product objects
-    //  */
+     /**
+      * @return Product[] Returns an array of Product objects
+      */
+      
+      public function findByMenu($params)
+      {
+        $qB = $this->createQueryBuilder('p')
+        ->join('p.menus', 'm')
+        ->andWhere('m.chief_id = :chief')
+        ->setParameter('chief', $params);
+
+        
+      }
     /*
     public function findByExampleField($value)
     {

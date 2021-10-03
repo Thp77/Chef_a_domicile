@@ -3,7 +3,11 @@
 {% block title %}Menu index{% endblock %}
 
 {% block body %}
-    <h1>Menu index</h1>
+    <h1>Tous les menus</h1>
+
+    {% if is_granted('ROLE_CHEF') %}
+    <a href="{{ path('menu_create', {'id': app.user.id}) }}">Create new</a>
+    {% endif %}
 
     <table class="table">
         <thead>
@@ -11,18 +15,22 @@
                 <th>Nom</th>
                 <th>Prix</th>
                 <th>Genre</th>
+                <th>Cuisinier</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for menu in menus %}
             <tr>
+            
                 <td>{{ menu.name }}</td>
                 <td>{{ menu.price }}</td>
                 <td>{{ menu.genre.genre }}</td>
+                <td>{{ menu.chief.firstname }} {{ menu.chief.name }}</td>
+
                 <td>
-                    {# <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a> #}
+                    <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
+                    {# <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a> #}
                 </td>
             </tr>
         {% else %}
@@ -33,5 +41,5 @@
         </tbody>
     </table>
 
-    {# <a href="{{ path('menu_new') }}">Create new</a> #}
+    {#  #}
 {% endblock %}
