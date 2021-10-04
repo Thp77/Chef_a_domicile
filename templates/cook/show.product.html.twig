@@ -2,14 +2,26 @@
 
 {% block body %}
 	{% if products %}
-		<h1>Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
+		<h1 class="text-center">Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
 
 		{% for product in products %}
-			<h2>{{ product.name }}</h2>
-			<p>{{ product.description }}</p>
-			<img src="{{ product.photo }}" alt="{{ product.name }}">
+<div class="container dd_prod">
+	
+	<div class="row  mb-3">
+		<div class="col-md-6 mt-5 ">
+				<img src="{{ product.photo }}" alt="{{ product.name }}" class="img" alt="...">
+				<h5 class="card-title text-white mt-3">{{ product.name }}</h5>
+				<p class="card-text text-white">{{ product.description }}</p>
+		</div>
+	</div>
+		
+
+</div>
+		
 		{% endfor %}
 	{% else %}
 		<h1>Ce chef ne propose pas encore de produit</h1>
 	{% endif %}
 {% endblock %}
+
+
