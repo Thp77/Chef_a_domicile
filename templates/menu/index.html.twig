@@ -29,8 +29,10 @@
                 <td>{{ menu.chief.firstname }} {{ menu.chief.name }}</td>
 
                 <td>
-                    <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                    {# <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a> #}
+                    <a href="{{ path('menu_show', {'id': menu.id}) }}">Détails</a>
+                    {% if is_granted('ROLE_CHEF') and menu.chief.id == app.user.id  %}
+                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">Modifiez votre menu</a> 
+                    {% endif %}
                 </td>
             </tr>
         {% else %}

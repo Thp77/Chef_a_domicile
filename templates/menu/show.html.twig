@@ -21,13 +21,18 @@
             </tr>
         </tbody>
     </table>
-
-    {% for product in menu.products if product.type.id == 1 %}
     
+    {% for product in menu.products %}
+        
+        <h3>{{ product.type.type }}</h3>
         <p>product: {{ product.name }}</p>
         <p>price: {{ product.description }}</p>
         <img src="{{ product.photo }}" alt="{{ product.name }}">
+        
+
     {% endfor %}
+
+    <p>Si le menu vous intéresse, veuillez contacter le cuisinier {{ menu.chief.firstname }} {{ menu.chief.name }} pour plus de détail directement par mail à : <b>{{ menu.chief.email }}</b></p>
 
     <a href="{{ path('menu_list') }}">back to list</a>
 

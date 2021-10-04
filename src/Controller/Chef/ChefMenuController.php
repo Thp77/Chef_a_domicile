@@ -21,11 +21,25 @@ class ChefMenuController extends AbstractController
 	    $form->handleRequest($request);
     
 	    if ($form->isSubmitted() && $form->isValid()) {
-		//     dd($form['aperitif']->getData()->toString());
-		// $menu->addProduct($form['aperitif'])
-		// ->addProduct($form['entree'])
-		// ->addProduct($form['plat'])
-		// ->addProduct($form['dessert']);
+		$aperitifs = $form['aperitif']->getData();
+		foreach ($aperitifs as $aperitif) {
+		    $menu->addProduct($aperitif);
+		}
+
+		$entrees = $form['entree']->getData();
+		foreach ($entrees as $entree) {
+			$menu->addProduct($entree);
+		}
+
+		$plats = $form['plat']->getData();
+		foreach ($plats as $plat) {
+			$menu->addProduct($plat);
+		}
+
+		$desserts = $form['dessert']->getData();
+		foreach ($desserts as $dessert) {
+			$menu->addProduct($dessert);
+		}
 		
 		$menu->setChief($user);
 		$entityManager = $this->getDoctrine()->getManager();
@@ -45,6 +59,7 @@ class ChefMenuController extends AbstractController
     
 	public function editAction(Request $request, Menu $menu): Response
 	{
+
 	    $form = $this->createForm(MenuType::class, $menu);
 	    $form->handleRequest($request);
     

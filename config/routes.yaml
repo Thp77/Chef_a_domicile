@@ -46,3 +46,7 @@ menu_show:
 menu_create:
   path: /chef/{id}/new/menu
   controller: App\Controller\Chef\ChefMenuController::newAction
+
+menu_edit:
+  path: /chef/{id}/edit/menu
+  controller: App\Controller\Chef\ChefMenuController::editAction
