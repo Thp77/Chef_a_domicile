@@ -8,6 +8,7 @@ use App\Form\MenuType;
 use App\Entity\Product;
 use App\Repository\MenuRepository;
 use App\Repository\ProductRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -59,31 +60,48 @@ class ChefMenuController extends AbstractController
     
 	public function editAction(Request $request, Menu $menu): Response
 	{
+	    $user = $this->getUser();
 
-	    $form = $this->createForm(MenuType::class, $menu);
+	    $form = $this->createForm(MenuType::class, $menu, ['user' => $user]);
 	    $form->handleRequest($request);
     
 	    if ($form->isSubmitted() && $form->isValid()) {
-		$this->getDoctrine()->getManager()->flush();
-    
-		return $this->redirectToRoute('menu_list', [], Response::HTTP_SEE_OTHER);
+
+            $menu->clearProducts();
+
+            $aperitifs = $form['aperitif']->getData();
+            foreach ($aperitifs as $aperitif) {
+                $menu->addProduct($aperitif);
+            }
+
+            $entrees = $form['entree']->getData();
+            foreach ($entrees as $entree) {
+                $menu->addProduct($entree);
+            }
+
+            $desserts = $form['dessert']->getData();
+            foreach ($desserts as $dessert) {
+                $menu->addProduct($dessert);
+            }
+
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('menu_list', [], Response::HTTP_SEE_OTHER);
 	    }
     
 	    return $this->renderForm('menu/edit.html.twig', [
-		'menu' => $menu,
-		'form' => $form,
+            'menu' => $menu,
+            'form' => $form,
 	    ]);
 	}
     
-	public function deleteAction(Request $request, Menu $menu): Response
+	public function deleteAction(Request $request, Menu $menu, EntityManagerInterface $em): Response
 	{
-	    if ($this->isCsrfTokenValid('delete'.$menu->getId(), $request->request->get('_token'))) {
-		$entityManager = $this->getDoctrine()->getManager();
-		$entityManager->remove($menu);
-		$entityManager->flush();
-	    }
-    
+        $em->remove($menu);
+        $em->flush();
+
 	    return $this->redirectToRoute('menu_list', [], Response::HTTP_SEE_OTHER);
 	}
-    }
+}
+    
     

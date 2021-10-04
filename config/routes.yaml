@@ -48,5 +48,9 @@ menu_create:
   controller: App\Controller\Chef\ChefMenuController::newAction
 
 menu_edit:
-  path: /chef/{id}/edit/menu
+  path: /chef/edit/menu/{id}
   controller: App\Controller\Chef\ChefMenuController::editAction
+
+menu_delete:
+  path: /chef/delete/menu/{id}
+  controller: App\Controller\Chef\ChefMenuController::deleteAction

@@ -116,6 +116,13 @@ class Menu
         return $this;
     }
 
+    public function clearProducts(): self
+    {
+        $this->products = new ArrayCollection();
+
+        return $this;
+    }
+
     public function getChief(): ?User
     {
         return $this->chief;
