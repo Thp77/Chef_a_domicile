@@ -67,10 +67,16 @@
 .dd_cook .card-title{
     color: black;
 }
+.dd_cook .card-text{
 
+color: black;
+font-size: 15px;
+
+}
 
 
  body{
+     width: 100%;
     background-image: url(/images/crea.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -108,7 +114,7 @@
 
 /* Ici on va personnaliser le css de la page login et modifier l'user avec le prefixe dd_update et dd_login */
 
-.dd_update, .dd_login{
+.dd_update, .dd_login, .dd_creat, .dd_creat2{
 
 display:grid;
 justify-content: space-evenly;
@@ -123,7 +129,7 @@ border: rgba(228, 171, 66, 0.658) 5px solid;
 }
 
 
-.dd_register .btn, .dd_login .btn, .dd_update .btn{
+.dd_register .btn, .dd_login .btn, .dd_creat .btn{
     
     background-color: rgb(231, 134, 78);
 }
@@ -132,11 +138,28 @@ border: rgba(228, 171, 66, 0.658) 5px solid;
 
 
 
+.dd_prod,  .dd_prod .img-fluid{
+    
+    border-radius: 1em;
+    background-color: rgba(231, 134, 78, 0.699);
 
-.dd_prod .img{
-    border-radius: 2em;
-    align-items: center;
    
 
 }
 
+/*  css de la page modification / suppression de produit  */
+
+.dd_update .modal-content{
+
+    background-color: rgba(0, 0, 0, 0.301);
+
+}
+
+/* css de tableau des mets */
+
+.dd_menu {
+
+    background: rgba(245, 132, 91, 0.678)!important;
+   color: cornsilk!important;
+   border-radius: 1em;
+}

@@ -2,22 +2,23 @@
 
 {% block body %}
 	{% if products %}
-		<h1 class="text-center">Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
+		<h1 class="text-center text-warning">Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
 
 		{% for product in products %}
-<div class="container dd_prod">
-	
-	<div class="row  mb-3">
-		<div class="col-md-6 mt-5 ">
-				<img src="{{ product.photo }}" alt="{{ product.name }}" class="img" alt="...">
-				<h5 class="card-title text-white mt-3">{{ product.name }}</h5>
-				<p class="card-text text-white">{{ product.description }}</p>
-		</div>
-	</div>
-		
 
+<div class="card dd_prod mb-3 d-inline-flex align-items-center text-white my-5 " style="max-width: 500px;">
+  <div class="row g-0 ">
+    <div class="col-md-12 ">
+    <img src="{{ product.photo }}" alt="{{ product.name }}" class="img-fluid " alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.description }}</p>
+      </div>
+    </div>
+  </div>
 </div>
-		
 		{% endfor %}
 	{% else %}
 		<h1>Ce chef ne propose pas encore de produit</h1>

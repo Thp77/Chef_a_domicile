@@ -3,38 +3,41 @@
 {% block body %}
 
 
-	<h1 class="text-center my-5 text-primary">{% if products %}
+	<h1 class="text-center my-5 text-warning">{% if products %}
 	{{ app.user.firstname }} {{ app.user.name }}, vous proposez ces mets !
 	{% else %}
 	{{ app.user.firstname }} {{ app.user.name }}, vous n'avez pas encore soumis de mets.
 	{% endif %}
 	<h1>
-	<p class="my-3">
-		<a href="{{ path('chef_new_product', { id: app.user.id })}}" class="btn btn-success">Créer un nouveau met</a>
+	<p class="my-3 mb-3">
+		<a href="{{ path('chef_new_product', { id: app.user.id })}}" class="btn btn-success ">Créer un nouveau met</a>
 	</p>
 
 
-	<table class="table table-bordered table-striped">
+	<table class="table dd_menu">
+		<thead>
 			<tr>
-			<th>Nom</th>
-			<th>Description</th>			
-			<th>Photo</th>			
-			<th>Type</th>			
-			<th>Actions</th>			
+				<th>Nom</th>
+				<th>Description</th>			
+				<th>Photo</th>			
+				<th>Type</th>			
+				<th>Actions</th>			
 			</tr>
-
-			{% for product in products %}
-			<tr>
-			<td>{{ product.name }}</td>
-			<td>{{ product.description | slice(0,40) }} ...</td>
-			<td><img src="{{ product.photo }}" alt="{{ product.name }}"> </td>
-			<td>{{ product.type.type }}</td>
-			<td>
-			<a href="{{ path('chef_edit_product', {id: product.id}) }}" class="btn btn-info">Éditer</a>
-			<a href="{{ path('chef_delete_product', {id: product.id}) }}" class="btn btn-danger">Supprimer</a>
-			</td>
+		</thead>
+		<tbody >
+	{% for product in products %}
+			<tr class=" dd_menu">
+				<td>{{ product.name }}</td>
+				<td>{{ product.description | slice(0,40) }} ...</td>
+				<td><img class="w-50" src="{{ product.photo }}" alt="{{ product.name }}"> </td>
+				<td>{{ product.type.type }}</td>
+				<td>
+				<a href="{{ path('chef_edit_product', {id: product.id}) }}" class="btn btn-success">Éditer ou supprimer</a>		
+				</td>
 			</tr>	
-			{% endfor %}
-		</table>	
-	</div>
+	{% endfor %}
+		</tbody>
+	</table>	
+
+	
 {% endblock %}

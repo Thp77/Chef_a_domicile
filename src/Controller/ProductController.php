@@ -13,4 +13,6 @@ class ProductController extends AbstractController
 		return $this->render('cook/show.product.html.twig',
 		 ['products' => $productRepository->findByChief($chief)]);
 	}
+
+	
 }

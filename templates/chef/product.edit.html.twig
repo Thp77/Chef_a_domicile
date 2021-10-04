@@ -2,6 +2,41 @@
 
 {% block body %}
 
-{{ form(form) }}
+<div class="container dd_creat2 ">
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-12">
+        {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.description, {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 mt-5">
+        {{ form_row(form.file, {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 mb-2 mt-5">
+            {{ form_row(form.type, {'attr':{'class':'form-control'}}) }}
+            {{ form_row(form.submit, {'attr':{'class':'btn btn-success mt-3'}} ) }}
+            <a data-bs-toggle="modal" data-bs-target="#deleteProductModal" href="{{ path('chef_delete_product', {id: product.id}) }}" class="btn btn-danger mt-3">Supprimer</a>
+    </div>
+    {{ form_end(form) }}
+ </div>
+</div>
 
+<!-- Mise en place d'un modal de confirmation pour la suppression -->
+            <div class="modal fade" id="deleteProductModal" tabindex="-1" aria-labelledby="deleteProductModalLabel" aria-hidden="true">
+                <div class="modal-dialog dd_update">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-white" id="deleteProductModalLabel">Suppression du produit</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-white">
+                            <p>Êtes-vous sûr de vouloir supprimer ce produit: {{ product.name }}?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn  btn-info " data-bs-dismiss="modal">Annuler</button>
+                            <a href="{{ path('chef_delete_product', {id: product.id}) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>	
 {% endblock %}

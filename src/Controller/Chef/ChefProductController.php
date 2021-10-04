@@ -94,7 +94,7 @@ class ChefProductController extends AbstractController
 		$manager = $this->getDoctrine()->getManager();
 		$manager->remove($product);
 		$manager->flush();
-		return $this->redirectToRoute('home');
+		return $this->redirectToRoute('chef_list_products', ['id' => $product->getChief()->getId()]);
 	}
 
 }

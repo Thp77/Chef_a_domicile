@@ -12,7 +12,7 @@
                                 <a class="nav-link " aria-current="page" href="{{ path('home') }}">Accueil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Menus</a>
+                                <a class="nav-link" href="{{ path('menu_list') }}">Menus</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('cook') }}">Cuisiniers</a>
@@ -22,9 +22,7 @@
                                 <a class="nav-link" href="{{ path('chef_list_products', { id: app.user.id }) }}" >Vos produits</a>
                             </li>
                             {% endif %}
-                            <li class="nav-item">
-                                <a class="nav-link">Réservation</a>
-                            </li>
+                      
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('about') }}">À propos</a>
                             </li>

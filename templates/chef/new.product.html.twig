@@ -2,6 +2,21 @@
 
 {% block body %}
 
-{{ form(form) }}
-
+<div class="container dd_creat ">
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-12">
+        {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
+        {{ form_row(form.description, {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 mt-5">
+        {{ form_row(form.file, {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 mb-2 mt-5">
+            {{ form_row(form.type, {'attr':{'class':'form-control'}}) }}
+    </div>
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+ </div>
+</div>
 {% endblock %}
