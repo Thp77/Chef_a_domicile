@@ -41,12 +41,12 @@ class UserController extends AbstractController
                 $fileService->upload($file, $user, 'photo');
             }
 
-            $role = $form->get('roles')->getData();
-            if ($role) {
-                $user->setRoles(['ROLE_CHEF']);
-            } else {
-                $user->setRoles(['ROLE_USER']);
-            }
+            // $role = $form->get('roles')->getData();
+            // if ($role) {
+            //     $user->setRoles(['ROLE_CHEF']);
+            // } else {
+            //     $user->setRoles(['ROLE_USER']);
+            // }
 
             $this->getDoctrine()->getManager()->flush();
 

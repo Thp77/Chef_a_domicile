@@ -53,13 +53,20 @@ class UserType extends AbstractType
                 'label' => 'Date de naissance',
                 'widget' => 'single_text',
                 ])
+            ->add('description', TextareaType::class, [
+                'required' => false,
+                'label' => 'Décrivez vous en quelques mots ! ( 255 caractères maximum )',
+                'attr' => ['class' => 'w-100',
+                'rows' => '5',
+                ],
+            ])
             ->add('file',FileType::class, [
                 'mapped' => false,
                 'label' => 'Photo de profil',
                 'required' => false,
                 ])
             ->add('submit', SubmitType::class, ['label' => 'Modifier',
-            'attr' => ['class' => 'btn'],
+            'attr' => ['class' => 'btn text-white mt-2'],
             ])
         ;
         }

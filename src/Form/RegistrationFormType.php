@@ -59,15 +59,14 @@ class RegistrationFormType extends AbstractType
             'mapped' => false,
             'required' => false,
             'label' => 'Cochez si vous proposez vos services de cuisinier',
-            'attr' => ['class' => 'checkbox_user_rol'],
+            'attr' => ['class' => 'checkbox_user_rol px-3'],
             ])
         ->add('description', TextareaType::class, [
             'required' => false,
-            'label' => 'Décrivez vous en quelques mots !',
+            'label' => 'Décrivez vous en quelques mots ! ( 255 caractères maximum )',
             'label_attr' => ['class' => 'd-none label_user_descript'],
-            'attr' => ['class' => 'd-none textarea_user_descript',
-            'rows' => '10',
-            'cols' => '25',
+            'attr' => ['class' => 'd-none textarea_user_descript w-100',
+            'rows' => '5',
             ],
         ])
         ->add('file',FileType::class, [
@@ -78,6 +77,7 @@ class RegistrationFormType extends AbstractType
         ->add('agreeTerms', CheckboxType::class, [
             'mapped' => false,
             'label' => 'Accepter les termes',
+            'attr' => ['class' => 'my-3'],
             'constraints' => [
                 new IsTrue([
                     'message' => 'Vous devez accepter les termes',

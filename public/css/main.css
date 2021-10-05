@@ -130,10 +130,15 @@ body {
     border: rgba(228, 171, 66, 0.658) 5px solid;
 }
 
+.dd_update .btn,
 .dd_register .btn,
 .dd_login .btn,
 .dd_creat .btn {
     background-color: rgb(231, 134, 78);
+}
+
+input[type="checkbox"] {
+    margin-left: 1em;
 }
 
 

@@ -6,38 +6,36 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
+            {{ form_start(registrationForm) }}
 <div class="container dd_register">
          <div class="row " >
             <h1>Inscription</h1>
 
-          <div class="col-md-6 my-1" >
-             {{form_row(registrationForm.name , {'attr':{'class':'form-control'}})}}
-             {{ form_row(registrationForm.username  , {'attr':{'class':'form-control'}}) }}
-
-        </div>
           <div  class="col-md-6 my-1" >
-                 {{ form_row(registrationForm.firstname  , {'attr':{'class':'form-control'}}) }}
-                {{ form_row(registrationForm.email  , {'attr':{'class':'form-control'}}) }}
-
-              </div>
-    
-        <div class="col-md-6 my-1" >
-          {{ form_row(registrationForm.plainPassword) }}
-                {{ form_row(registrationForm.phone  , {'attr':{'class':'form-control'}}) }} 
-                {{ form_row(registrationForm.birthday  , {'attr':{'class':'form-control'}}) }} 
+            {{ form_row(registrationForm.username  , {'attr':{'class':'form-control'}}) }}
+            {{ form_row(registrationForm.email  , {'attr':{'class':'form-control'}}) }}
+            {{ form_row(registrationForm.plainPassword) }}
+            {{ form_row(registrationForm.file  , {'attr':{'class':'form-control'}}) }}
           </div>
-      
-        <div class="col-md-6 my-1" >
+          <div class="col-md-6 my-1" >
+            {{ form_row(registrationForm.firstname  , {'attr':{'class':'form-control'}}) }}
+            {{form_row(registrationForm.name , {'attr':{'class':'form-control'}})}}
+            {{ form_row(registrationForm.phone  , {'attr':{'class':'form-control'}}) }} 
+            {{ form_row(registrationForm.birthday  , {'attr':{'class':'form-control'}}) }} 
+                      
+        </div>
+   
+        
+        <div class="col-12 my-1" >
           {{ form_row(registrationForm.roles ) }} 
           {{ form_label(registrationForm.description) }} 
           {{ form_row(registrationForm.description) }} 
         </div>
-
-        <div class="col-md-6">
-          {{ form_row(registrationForm.file  , {'attr':{'class':'form-control'}}) }} 
-              {{ form_row(registrationForm.agreeTerms) }} 
-            {{ form_row(registrationForm.submit ) }}
+        <div class="col-md-12 mb-4">
+        {{ form_row(registrationForm.agreeTerms) }}
+        {{ form_row(registrationForm.submit ) }}
         </div>
+        
     
             <a class="" href="{{ path('app_login') }}">Vous déjà un compte</a>
 
