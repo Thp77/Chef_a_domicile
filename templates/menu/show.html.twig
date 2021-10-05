@@ -1,26 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Menu{% endblock %}
+{% block title %}Le menu {{ menu.name }}{% endblock %}
 
 {% block body %}
-    <h1>Menu</h1>
+    <h1>Le chef {{ menu.chief.firstname }} {{ menu.chief.name }} vous propose son menu {{ menu.name }} !</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Le chef</th>
-                <td>{{ menu.chief.firstname }} {{ menu.chief.name }} </td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ menu.name }}</td>
-            </tr>
-            <tr>
+    
+    <tr>
                 <th>Price</th>
-                <td>{{ menu.price }}</td>
+                <td>{{ menu.price }} € / menu</td>
             </tr>
-        </tbody>
-    </table>
     
     {% for product in menu.products %}
         
@@ -28,6 +17,7 @@
         <p>product: {{ product.name }}</p>
         <p>price: {{ product.description }}</p>
         <img src="{{ product.photo }}" alt="{{ product.name }}">
+        
         
 
     {% endfor %}

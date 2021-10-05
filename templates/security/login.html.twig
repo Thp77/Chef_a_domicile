@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+{% block title %}Se connecter{% endblock %}
 
 {% block body %}
 <form method="post">
@@ -10,21 +10,31 @@
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Veuillez vous identifier</h1>
-    <label for="inputUsername">Pseudonyme</label>
-    <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
-    <label for="inputPassword">Mot de passe</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+  <div class="container dd_login">
+            <h1 class=" mb-3 text-center text-dark font-weight-normal">Veuillez vous identifier</h1>
+    <div class="row" >
+        <div class="col-md-12">
+            <label for="inputUsername">Pseudonyme</label>
+            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+        <div>
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}">
+        <div class="col-md-12">
+            <label for="inputPassword">Mot de passe</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        </div>
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        S'identifier
-    </button>
+       <div class="col mt-3 ">
+            <input type="hidden" name="_csrf_token"
+                value="{{ csrf_token('authenticate') }}">
+    
+            <button class="btn btn-lg " type="submit">
+                S'identifier
+            </button>
+       </div>
+    </div>   
 </form>
 {% endblock %}

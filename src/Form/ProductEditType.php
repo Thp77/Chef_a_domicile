@@ -25,7 +25,7 @@ class ProductEditType extends AbstractType
                 ])
             ->add('type', EntityType::class, ['class' => Type::class, 'choice_label' => 'type', 'multiple' => false, 'expanded' => false])
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer',
-            'attr' => ['class' => 'btn btn-success'],
+            'attr' => ['class' => 'btn'],
             ])
         ;
     }

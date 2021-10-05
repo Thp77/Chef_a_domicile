@@ -3,14 +3,33 @@
 {% block title %}Modifier le profil{% endblock %}
 
 {% block body %}
-    <h1>Modifier le profil</h1>
-
+<h1 class="text-center text-white">Modifier le profil</h1>
+<div class="container dd_update">
     {{ form_start(form) }}
-
-    {{ form_row(form.name) }}
-    <div class="row">
+    <div class="col-md-12 my-1">
+        {{form_row(form.name , {'attr':{'class':'form-control'}})}}
+    </div>
+    <div  class="col-md-12 my-1" >
+        {{ form_row(form.firstname  , {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 my-1"  >
+        {{ form_row(form.username  , {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 my-1" >
+        {{ form_row(form.email  , {'attr':{'class':'form-control'}}) }}
+    </div>
+    <div class="col-md-12 my-1" >
+        {{ form_row(form.plainPassword) }}
+    </div>
+    <div class="col-md-12 my-1" >
+        {{ form_row(form.phone  , {'attr':{'class':'form-control'}}) }} 
+    </div>
+    <div class="col-md-12 mt-1 mb-4" >
+        {{ form_row(form.birthday  , {'attr':{'class':'form-control'}}) }} 
+    </div>
+    <div class="row mt-1 mb-4">
         <div class="{% if user.photo %}col-6{% else %}col-12{% endif %}">
-    {{ form_row(form.file) }}
+            {{ form_row(form.file) }}
         </div>
         {% if user.photo %}
         <div class="col-6 text-center">
@@ -18,11 +37,12 @@
         </div>
         {% endif %}
     </div>
-
-    {{ form_rest(form) }}
-
+    {{ form_row(form.submit ) }}
     <a href="{{ path('home') }}">Retour à la page d'accueil</a>
+</div>
+{{ form_end(form) }}
 
+</div>
 {% endblock %}
 
 {% block javascripts %}

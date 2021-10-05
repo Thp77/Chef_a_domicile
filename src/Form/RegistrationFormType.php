@@ -34,6 +34,7 @@ class RegistrationFormType extends AbstractType
             'invalid_message' => 'The password fields must match.',
             'required' => true,
             'first_options'  => ['label' => 'Mot de passe',
+                                'attr' => ['class' => 'form-control'],
                                 'constraints' => [
                                 new NotBlank([
                                     'message' => 'Entrez un mot de passe',
@@ -45,7 +46,9 @@ class RegistrationFormType extends AbstractType
                                     'max' => 255,
                                 ]),
                             ]],
-            'second_options' => ['label' => 'Confirmez votre mot de passe'],
+            'second_options' => ['label' => 'Confirmez votre mot de passe',
+                                'attr' => ['class' => 'form-control'],
+        ],
         ])
         ->add('phone', null, ['label' => 'Téléphone'] )
         ->add('birthday', DateType::class, [
@@ -62,7 +65,10 @@ class RegistrationFormType extends AbstractType
             'required' => false,
             'label' => 'Décrivez vous en quelques mots !',
             'label_attr' => ['class' => 'd-none label_user_descript'],
-            'attr' => ['class' => 'd-none textarea_user_descript'],
+            'attr' => ['class' => 'd-none textarea_user_descript',
+            'rows' => '10',
+            'cols' => '25',
+            ],
         ])
         ->add('file',FileType::class, [
             'mapped' => false,
@@ -78,7 +84,10 @@ class RegistrationFormType extends AbstractType
                 ]),
             ],
         ])
-        ->add('submit', SubmitType::class, ['label' => 'S\'inscrire'])
+        ->add('submit', SubmitType::class, [
+            'label' => 'S\'inscrire',
+            'attr' => ['class' => 'btn text-white mt-2',]
+            ])
     ;
     }
 

@@ -1,3 +1,22 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
+                {{ form_row(form.price, {'attr':{'class':'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.genre, {'attr':{'class':'form-control'}}) }}
+                {{ form_row(form.aperitif, {'attr':{'class':'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.entree, {'attr':{'class':'form-control'}}) }}
+                {{ form_row(form.dessert, {'attr':{'class':'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+                {{ form_row(form.plat, {'attr':{'class':'form-control'}}) }}
+            </div>
+                {{ form_row(form.submit, {'attr':{'class':'form-control'}}) }}
+         </div>    
+    </div>
 {{ form_end(form) }}

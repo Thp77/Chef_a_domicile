@@ -1,0 +1,162 @@
+/* ici on def le css de la navbar utilisateur  avec le prefixe dd_navbar */
+
+.dd_navbar .navbar-collapse,
+.dd_navbar a {
+    font-size: 20px;
+    color: rgb(255, 255, 255)!important;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.dd_navbar .dropdown-menu {
+    background: rgba(245, 139, 52, 0.719)!important;
+    border-radius: 15px;
+}
+
+.dd_navbar .dropdown-menu:hover {
+    background: rgba(245, 139, 52, 0.568)!important;
+}
+
+.dd_navbar .dropdown-item:hover {
+    background-color: transparent!important;
+}
+
+.dd_navbar a:hover {
+    color: rgb(0, 0, 0)!important;
+}
+
+
+/* Ici on va personnaliser le css de la page Cuisinier avec le prefixe dd_cook */
+
+.dd_cook .bouton {
+    background-color: rgb(228, 146, 88)!important;
+    border-radius: 10px!important;
+}
+
+.dd_cook .card-img-top {
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 1s ease;
+    /* Safari and Chrome */
+    -moz-transition: all 1s ease;
+    /* Firefox */
+    -ms-transition: all 1s ease;
+    /* IE 9 */
+    -o-transition: all 1s ease;
+    /* Opera */
+    transition: all 1s ease;
+}
+
+.dd_cook .card-img-top:hover {
+    -webkit-transform: scale(1.05);
+    /* Safari and Chrome */
+    -moz-transform: scale(1.05);
+    /* Firefox */
+    -ms-transform: scale(1.05);
+    /* IE 9 */
+    -o-transform: scale(1.05);
+    /* Opera */
+    transform: scale(1.05);
+}
+
+.dd_cook .card-img-top,
+.dd_cook .card {
+    border-radius: 15%!important;
+}
+
+.dd_cook .card {
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(64, 64, 64, 0.37);
+    box-shadow: 5px 5px 15px 5px rgba(64, 64, 64, 0.37);
+    border-bottom: 3px solid rgb(240, 142, 107)!important;
+    border-right: 3px solid rgb(240, 142, 107)!important;
+    background-color: rgba(255, 255, 255, 0.514)!important;
+}
+
+.dd_cook .card-title {
+    color: black;
+}
+
+.dd_cook .card-text {
+    color: black;
+    font-size: 15px;
+}
+
+body {
+    width: 100%;
+    background-image: url(/images/crea.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cuisto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.801);
+    font-size: 50px;
+}
+
+
+/* Ici on va personnaliser le css de la page Inscription avec le prefixe dd_register  */
+
+.dd_register {
+    display: flex;
+    background-color: rgba(241, 241, 241, 0.568);
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    width: 50em;
+    font-weight: bolder;
+    border: rgba(228, 171, 66, 0.658) 5px solid;
+}
+
+
+/* Ici on va personnaliser le css de la page login et modifier l'user avec le prefixe dd_update et dd_login */
+
+.dd_update,
+.dd_login,
+.dd_creat,
+.dd_creat2 {
+    display: grid;
+    justify-content: space-evenly;
+    background-color: rgba(241, 241, 241, 0.568);
+    text-align: center;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    font-weight: bolder;
+    border: rgba(228, 171, 66, 0.658) 5px solid;
+}
+
+.dd_register .btn,
+.dd_login .btn,
+.dd_creat .btn {
+    background-color: rgb(231, 134, 78);
+}
+
+
+/* mise en forme des cartes produits des chefs  */
+
+.dd_prod,
+.dd_prod .img-fluid {
+    border-radius: 1em;
+    background-color: rgba(231, 134, 78, 0.699);
+}
+
+
+/*  css de la page modification / suppression de produit  */
+
+.dd_update .modal-content {
+    background-color: rgba(0, 0, 0, 0.301);
+}
+
+
+/* css de tableau des mets */
+
+.dd_menu {
+    background: rgba(245, 132, 91, 0.678)!important;
+    color: cornsilk!important;
+    border-radius: 1em;
+}

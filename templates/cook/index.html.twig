@@ -1,22 +1,26 @@
 {% extends 'base.html.twig' %}
+{% block title %}Nos cuisiniers{% endblock %}
 
 {% block body %}
+<div class="container-fluid  cuisto">
+<div class="row mt-4 flex-wrap justify-content-evenly">
 	<h1>Nos cuisiniers</h1>
-	<h3>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus quas, laborum ullam consectetur quos sint rerum molestiae quam fugiat voluptate placeat enim, quisquam obcaecati sunt. Dolorem repudiandae quibusdam omnis ad!</h3>
-<div class="row mt-4">
+	<h3>Voici nos différents chefs !</h3>
+
 	{% for cook in cooks %}
-	<div class="col-12 col-sm-6 col-md-4 col-lg-3">
-		<div class="card my-4 mx-2">
+	<div class="col-12 col-sm-6 col-md-4 dd_cook col-lg-3 ">
+		<div class="card my-3 mx-2">
   			<img src="{{ cook.photo }}" class="card-img-top" alt="{{ cook.name }}">
  			 <div class="card-body text-center">
-    				<h5 class="card-title">{{ cook.firstname }} {{ cook.name }}</h5>
+    				<h5 class=" .dd_cook card-title">{{ cook.firstname }} {{ cook.name }}</h5>
     				<p class="card-text">{{ cook.description }}</p>
-    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn btn-primary">Les produits que le chef propose</a>
+    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn bouton">Les produits</a>
+    				<a href="#" class="btn  bouton ">Les Menus</a>
   			</div>
 		</div>
 	</div>
 	{% endfor %}
 </div>
-
+</div>
 
 {% endblock %}

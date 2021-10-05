@@ -32,6 +32,7 @@ class UserType extends AbstractType
                 'invalid_message' => 'The password fields must match.',
                 'required' => true,
                 'first_options'  => ['label' => 'Mot de passe',
+                                    'attr' => ['class' => 'form-control'],
                                     'constraints' => [
                                     new NotBlank([
                                         'message' => 'Entrez un mot de passe',
@@ -43,7 +44,9 @@ class UserType extends AbstractType
                                         'max' => 255,
                                     ]),
                                 ]],
-                'second_options' => ['label' => 'Confirmez en inscrivant votre mot de passe'],
+                'second_options' => ['label' => 'Confirmez en inscrivant votre mot de passe',
+                                    'attr' => ['class' => 'form-control'],
+                ],
             ])
             ->add('phone', null, ['label' => 'Téléphone'] )
             ->add('birthday', DateType::class, [
@@ -56,7 +59,7 @@ class UserType extends AbstractType
                 'required' => false,
                 ])
             ->add('submit', SubmitType::class, ['label' => 'Modifier',
-            'attr' => ['class' => 'btn btn-success'],
+            'attr' => ['class' => 'btn'],
             ])
         ;
         }
