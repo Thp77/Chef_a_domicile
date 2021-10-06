@@ -52,13 +52,14 @@ footer .nav_footer {
     flex-direction: column;
 }
 
-footer .nav_footer a {
+footer .nav_footer a,
+footer .foot_right a {
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-weight: bold;
-    text-orientation: upright;
 }
 
 
@@ -102,6 +103,21 @@ footer .social .fa-instagram {
 .tm-about,
 .dd_login {
     min-height: 58vh;
+}
+
+
+/* Mise en page des cgu */
+
+.cgu {
+    background-color: rgba(241, 241, 241, 0.568);
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    width: 80vw;
+    margin: auto;
+    font-weight: bolder;
+    border: rgba(228, 171, 66, 0.658) 5px solid;
 }
 
 

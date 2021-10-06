@@ -11,6 +11,10 @@ about:
   path: /about
   controller: App\Controller\AboutController::indexAction
 
+cgu:
+  path: /cgu
+  controller: App\Controller\CguController::indexAction
+
 cook:
   path: /cook/list
   controller: App\Controller\CookController::listAction
