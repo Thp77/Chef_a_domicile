@@ -1,8 +1,16 @@
+body {
+    width: 100%;
+    background-image: url(/images/crea.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 /* ici on def le css de la navbar utilisateur  avec le prefixe dd_navbar */
 
 .dd_navbar .navbar-collapse,
 .dd_navbar a {
-    font-size: 20px;
+    font-size: 24.2px;
     color: rgb(255, 255, 255)!important;
     align-items: center;
     justify-content: space-evenly;
@@ -24,6 +32,76 @@
 
 .dd_navbar a:hover {
     color: rgb(0, 0, 0)!important;
+}
+
+
+/* Définissons le style du footer */
+
+footer {
+    width: 100vw;
+    position: static;
+    bottom: 0;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(245, 139, 52, 0.719);
+    padding: 25px 0;
+}
+
+footer .nav_footer {
+    display: flex;
+    flex-direction: column;
+}
+
+footer .nav_footer a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+    text-orientation: upright;
+}
+
+
+/* les boutons vers les réseaux sociaux */
+
+footer .social .fa {
+    padding: 20px;
+    font-size: 30px;
+    text-align: left;
+    text-decoration: none;
+    margin: 5px 5px;
+    border-radius: 50%;
+}
+
+footer .social .fa:hover {
+    opacity: 0.7;
+}
+
+footer .social .fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+footer .social .fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+footer .social .fa-instagram {
+    background: #ff5700;
+    color: white;
+}
+
+
+/* ================================================================= */
+
+
+/* Mise en page de la home et about (les 2 statiques) */
+
+.tm-home,
+.tm-about,
+.dd_login {
+    min-height: 58vh;
 }
 
 
@@ -82,13 +160,6 @@
     font-size: 15px;
 }
 
-body {
-    width: 100%;
-    background-image: url(/images/crea.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .cuisto {
     display: flex;
     flex-direction: column;
@@ -141,6 +212,18 @@ input[type="checkbox"] {
     margin-left: 1em;
 }
 
+#user_file {
+    margin: 0 15px;
+}
+
+.dd_login {
+    width: 70%;
+}
+
+.dd_login label {
+    font-size: 19px;
+}
+
 
 /* mise en forme des cartes produits des chefs  */
 
@@ -164,4 +247,17 @@ input[type="checkbox"] {
     background: rgba(245, 132, 91, 0.678)!important;
     color: cornsilk!important;
     border-radius: 1em;
+}
+
+
+/* Et un peu de responsive */
+
+@media screen and (max-width: 768px) {
+    #navbarNav {
+        background: rgba(245, 139, 52, 0.719)!important;
+        border-radius: 15px;
+    }
+    .dd_login {
+        width: 90%;
+    }
 }

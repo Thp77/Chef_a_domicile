@@ -3,6 +3,7 @@
 {% block title %}Se connecter{% endblock %}
 
 {% block body %}
+<div class="container dd_login">
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -14,17 +15,16 @@
         </div>
     {% endif %}
 
-  <div class="container dd_login">
-            <h1 class=" mb-3 text-center text-dark font-weight-normal">Veuillez vous identifier</h1>
-    <div class="row" >
-        <div class="col-md-12">
-            <label for="inputUsername">Pseudonyme</label>
-            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
-        <div>
+            <h1 class=" my-5 text-center text-dark font-weight-normal">Veuillez vous identifier</h1>
+    <div class="row " >
+        <div class="col-md-12 my-3">
+            <label for="inputUsername" class="mb-3">Pseudonyme</label>
+            <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control text-center" autocomplete="username" required autofocus>
+        </div>
 
-        <div class="col-md-12">
-            <label for="inputPassword">Mot de passe</label>
-            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <div class="col-md-12 my-3">
+            <label for="inputPassword" class="mb-3">Mot de passe</label>
+            <input type="password" name="password" id="inputPassword" class="form-control text-center" autocomplete="current-password" required>
         </div>
 
        <div class="col mt-3 ">
@@ -34,7 +34,9 @@
             <button class="btn btn-lg " type="submit">
                 S'identifier
             </button>
+            <a class="d-block mt-3" href="{{ path('app_register') }}">Pas encore inscrit ?</a>
        </div>
-    </div>   
-</form>
+    
+    </form>
+</div>   
 {% endblock %}
