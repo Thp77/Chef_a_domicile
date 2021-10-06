@@ -8,6 +8,10 @@ body {
 
 /* ici on def le css de la navbar utilisateur  avec le prefixe dd_navbar */
 
+.dd_navbar {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
 .dd_navbar .navbar-collapse,
 .dd_navbar a {
     font-size: 24.2px;
@@ -101,6 +105,7 @@ footer .social .fa-instagram {
 
 .tm-home,
 .tm-about,
+.tm-prod,
 .dd_login {
     min-height: 58vh;
 }
@@ -111,13 +116,21 @@ footer .social .fa-instagram {
 .cgu {
     background-color: rgba(241, 241, 241, 0.568);
     justify-content: center;
-    text-align: center;
     border-radius: 1.25rem;
     padding: 1rem;
     width: 80vw;
     margin: auto;
     font-weight: bolder;
     border: rgba(228, 171, 66, 0.658) 5px solid;
+}
+
+.cgu h1,
+.cgu h2 {
+    text-align: center;
+}
+
+.cgu p {
+    text-align: justify;
 }
 
 
@@ -185,6 +198,12 @@ footer .social .fa-instagram {
     font-size: 50px;
 }
 
+.cuisto h1,
+.cuisto h3,
+.tm-prod h1 {
+    color: rgb(228, 146, 88);
+}
+
 
 /* Ici on va personnaliser le css de la page Inscription avec le prefixe dd_register  */
 
@@ -233,7 +252,7 @@ input[type="checkbox"] {
 }
 
 .dd_login {
-    width: 70%;
+    width: 50%;
 }
 
 .dd_login label {
@@ -243,17 +262,30 @@ input[type="checkbox"] {
 
 /* mise en forme des cartes produits des chefs  */
 
+.tm-prod {
+    width: 90vw;
+    margin: auto;
+}
+
 .dd_prod,
 .dd_prod .img-fluid {
     border-radius: 1em;
     background-color: rgba(231, 134, 78, 0.699);
 }
 
+.dd_prod {
+    width: 400px;
+}
+
 
 /*  css de la page modification / suppression de produit  */
 
 .dd_update .modal-content {
-    background-color: rgba(0, 0, 0, 0.301);
+    background-color: rgba(0, 0, 0, 0.401);
+}
+
+.dd_update .modal-content h5 {
+    color: rgb(255, 255, 255);
 }
 
 
