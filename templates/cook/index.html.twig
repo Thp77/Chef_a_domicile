@@ -10,12 +10,12 @@
 	{% for cook in cooks %}
 	<div class="col-12 col-sm-6 col-md-4 dd_cook col-lg-3 ">
 		<div class="card my-3 mx-2">
-  			<img src="{% if cook.photo %}{{ cook.photo }}{% else %}/images/no-photo.jpeg{% endif %}" class="card-img-top" alt="{{ cook.name }}">
+  			<img src="{{ cook.photo }}" class="card-img-top" alt="{{ cook.name }}">
  			 <div class="card-body text-center">
     				<h5 class=" .dd_cook card-title">{{ cook.firstname }} {{ cook.name }}</h5>
     				<p class="card-text">{{ cook.description }}</p>
     				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn bouton">Les produits</a>
-    				<a href="#" class="btn  bouton ">Les Menus</a>
+    				<a href="{{ path('menu_list') }}" class="btn  bouton ">Les Menus</a>
   			</div>
 		</div>
 	</div>

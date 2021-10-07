@@ -1,22 +1,35 @@
 {{ form_start(form) }}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
+<div class="container dd_creat3">
+         <div class="row " >
+            <h1>Créer</h1>
+
+          <div  class="col-xl-12 col-12 my-1" >
                 {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
                 {{ form_row(form.price, {'attr':{'class':'form-control'}}) }}
-            </div>
-            <div class="col-md-6">
+          </div>
+          
+       <div class="col-xl-8 col-12 " >
+           {{ form_row(form.aperitif, {'attr':{'class':'form-control'}}) }}
+           </div>
+       <div class="col-xl-8 col-12 " >
+            {{ form_row(form.entree, {'attr':{'class':'form-control'}}) }}
+           </div>
+    
+        <div class="col-xl-8 col-12 ">
+            {{ form_row(form.plat, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-xl-8 col-12 ">
+            {{ form_row(form.dessert, {'attr':{'class':'form-control'}}) }}
+        </div>
+      
+        <div class="col-xl-4 col-md-2 col-sm-1 " >
                 {{ form_row(form.genre, {'attr':{'class':'form-control'}}) }}
-                {{ form_row(form.aperitif, {'attr':{'class':'form-control'}}) }}
-            </div>
-            <div class="col-md-6">
-                {{ form_row(form.entree, {'attr':{'class':'form-control'}}) }}
-                {{ form_row(form.dessert, {'attr':{'class':'form-control'}}) }}
-            </div>
-            <div class="col-md-6">
-                {{ form_row(form.plat, {'attr':{'class':'form-control'}}) }}
-            </div>
-                {{ form_row(form.submit, {'attr':{'class':'form-control'}}) }}
-         </div>    
-    </div>
+        </div>
+              {{ form_row(form.submit, {'attr':{'class':'btn mt-4 w-50 form-control'}}) }}
+ 
+        
+    
+
+        </div>
+   </div>
 {{ form_end(form) }}
