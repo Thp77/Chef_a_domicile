@@ -3,6 +3,7 @@
 {% block title %}Le menu {{ menu.name }}{% endblock %}
 
 {% block body %}
+<div class="tm-menu_detail">
     <h1>Le chef {{ menu.chief.firstname }} {{ menu.chief.name }} vous propose son menu {{ menu.name }} !</h1>
 
     
@@ -24,9 +25,10 @@
 
     <p>Si le menu vous intéresse, veuillez contacter le cuisinier {{ menu.chief.firstname }} {{ menu.chief.name }} pour plus de détail directement par mail à : <b>{{ menu.chief.email }}</b></p>
 
-    <a href="{{ path('menu_list') }}">back to list</a>
+    <button class="btn btn-warning" onclick="history.back()">Retour</button>
 
     {# <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a> #}
 
 
+</div>
 {% endblock %}

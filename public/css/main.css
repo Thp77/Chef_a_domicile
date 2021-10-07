@@ -106,8 +106,9 @@ footer .social .fa-instagram {
 .tm-home,
 .tm-about,
 .tm-prod,
-.dd_login {
-    min-height: 58vh;
+.dd_login,
+.tm-menu_detail {
+    min-height: 57vh;
 }
 
 
