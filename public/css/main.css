@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 body {
     width: 100%;
     background-image: url(/images/crea.jpg);
@@ -67,6 +68,17 @@ footer .foot_right a {
 }
 
 
+/* css du texte du about */
+
+.tm-about {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.637);
+    color: rgba(245, 242, 237, 0.822);
+    border-radius: 2em;
+    padding: 8em;
+}
+
+
 /* les boutons vers les réseaux sociaux */
 
 footer .social .fa {
@@ -108,6 +120,23 @@ footer .social .fa-instagram {
 .tm-prod,
 .tm-menu_detail {
     min-height: 57vh;
+}
+
+.tm-home .top1 {
+    font-weight: 900;
+    text-decoration: underline;
+    font-size: 1.8em;
+    color: rgb(240, 80, 80);
+    font-family: 'Oswald', sans-serif;
+}
+
+.bord {
+    margin-top: 1em;
+    color: rgb(248, 248, 248);
+    margin-right: 1.4em;
+    font-size: 1.5em;
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
 }
 
 
@@ -221,7 +250,29 @@ footer .social .fa-instagram {
 }
 
 
-/* Ici on va personnaliser le css de la page login et modifier l'user avec le prefixe dd_update et dd_login */
+/* CSS de la page création de met */
+
+.dd_creat .select2 {
+    margin: 0 auto;
+}
+
+
+/* Ici on personnalise la page créer menu */
+
+.dd_creat3 {
+    display: flex;
+    background-color: rgba(241, 241, 241, 0.568);
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.25rem;
+    padding: 1rem;
+    width: 50em;
+    font-weight: bolder;
+    border: rgba(228, 171, 66, 0.658) 5px solid;
+}
+
+
+/* Ici on va personnaliser le css des formulaires */
 
 .dd_update,
 .dd_login,
@@ -240,7 +291,8 @@ footer .social .fa-instagram {
 .dd_update .btn,
 .dd_register .btn,
 .dd_login .btn,
-.dd_creat .btn {
+.dd_creat .btn,
+.dd_creat3 .btn {
     background-color: rgb(231, 134, 78);
 }
 
