@@ -106,7 +106,6 @@ footer .social .fa-instagram {
 .tm-home,
 .tm-about,
 .tm-prod,
-.dd_login,
 .tm-menu_detail {
     min-height: 57vh;
 }
@@ -174,6 +173,7 @@ footer .social .fa-instagram {
 }
 
 .dd_cook .card {
+    max-width: 380px;
     -webkit-box-shadow: 5px 5px 15px 5px rgba(64, 64, 64, 0.37);
     box-shadow: 5px 5px 15px 5px rgba(64, 64, 64, 0.37);
     border-bottom: 3px solid rgb(240, 142, 107)!important;
@@ -202,7 +202,7 @@ footer .social .fa-instagram {
 .cuisto h1,
 .cuisto h3,
 .tm-prod h1 {
-    color: rgb(228, 146, 88);
+    color: #ffc107;
 }
 
 
@@ -252,6 +252,7 @@ input[type="checkbox"] {
     margin: 0 15px;
 }
 
+.dd_creat,
 .dd_login {
     width: 50%;
 }
@@ -290,12 +291,58 @@ input[type="checkbox"] {
 }
 
 
-/* css de tableau des mets */
+/* css création de nouveau produit */
+
+.tm-menu_list,
+.tm-about,
+.tm-list_prod,
+.dd_creat,
+.dd_login {
+    min-height: 62vh;
+}
+
+
+/* css de tableau des mets et des menus */
 
 .dd_menu {
     background: rgba(245, 132, 91, 0.678)!important;
     color: cornsilk!important;
     border-radius: 1em;
+}
+
+.tm-button_create a {
+    font-size: 19px;
+}
+
+.tm-list_prod .even,
+.tm-menu_list .even {
+    color: black;
+}
+
+.tm-list_prod table,
+.tm-menu_list table {
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.tm-list_prod table tbody td {
+    vertical-align: center;
+}
+
+
+/* Pour les réglages autour des tables */
+
+.dataTables_length select,
+.dataTables_length label,
+.dataTables_filter label,
+.dataTables_filter input,
+.dataTables_info,
+.dataTables_paginate.paginate_button {
+    margin-bottom: 12px;
+    color: #ffc107!important;
+    font-size: 18px!important;
+    text-decoration: none!important;
 }
 
 
@@ -306,7 +353,8 @@ input[type="checkbox"] {
         background: rgba(245, 139, 52, 0.719)!important;
         border-radius: 15px;
     }
-    .dd_login {
+    .dd_login,
+    .dd_creat {
         width: 90%;
     }
 }

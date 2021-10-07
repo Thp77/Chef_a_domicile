@@ -3,20 +3,25 @@
 {% block body %}
 
 <div class="container dd_creat">
-{{ form_start(form) }}
-<div class="row">
-    <div class="col-md-12">
-        {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
-        {{ form_row(form.description, {'attr':{'class':'form-control'}}) }}
-    </div>
-    <div class="col-md-12 mt-5">
-        {{ form_row(form.file, {'attr':{'class':'form-control'}}) }}
-    </div>
-    <div class="col-md-12 mb-2 mt-5">
-            {{ form_row(form.type, {'attr':{'class':'form-control'}}) }}
-    </div>
+    <div class="row">
+        <h1>Créer un nouveau met</h1>
+    {{ form_start(form) }}
+        <div class="col-12 mt-3">
+             
+            {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
+        </div> 
+        <div class="col-12 my-4">
+            {{ form_row(form.description, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-12 my-5">
+            {{ form_row(form.file, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-12 mb-2 mt-5">
+                {{ form_row(form.type, {'attr':{'class':'form-control'}}) }}
+        </div>
         {{ form_row(form.submit) }}
-    {{ form_end(form) }}
- </div>
+        {{ form_end(form) }}
+    </div>
 </div>
+
 {% endblock %}

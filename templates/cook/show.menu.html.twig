@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title %}Menu du chef{% endblock %}
+
+{% block body %}
+<div class="tm-prod text-center">
+	{% if menus %}
+		<h1 class="text-center">Les menus que propose {{ menus[0].chief.firstname }} {{ menus[0].chief.name }}</h1>
+		{% for menu in menus %}	
+			<div class="card dd_prod  d-inline-flex align-items-center text-white my-5 mx-3" >
+				<div class="row g-0 ">
+					
+					<div class="col-12 text-center">
+						<div class="card-body">
+							<h5 class="card-title">{{ menu.name }}</h5>
+							<p class="card-text">{{ menu.genre.genre }}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	{% else %}
+		<h1 class="text-center text-warning">Ce chef ne propose pas encore de menu</h1>
+	{% endif %}
+</div>
+{% endblock %}

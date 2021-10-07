@@ -5,17 +5,17 @@
 <div class="container-fluid cuisto">
 <div class="row mt-4 flex-wrap justify-content-evenly">
 	<h1>Nos cuisiniers</h1>
-	<h3>Voici nos différents chefs !</h3>
+	<h3 class="my-4">Voici nos différents chefs !</h3>
 
 	{% for cook in cooks %}
-	<div class="col-12 col-sm-6 col-md-4 dd_cook col-lg-3 ">
+	<div class="dd_cook col-12 col-sm-6 col-md-4 col-lg-3 ">
 		<div class="card my-3 mx-2">
-  			<img src="{% if cook.photo %}{{ cook.photo }}{% else %}/images/no-photo.jpeg{% endif %}" class="card-img-top" alt="{{ cook.name }}">
+  			<img src="{% if cook.photo %}{{ cook.photo }}{% else %}/images/no-photo.png{% endif %}" class="card-img-top" alt="{{ cook.name }}">
  			 <div class="card-body text-center">
-    				<h5 class=" .dd_cook card-title">{{ cook.firstname }} {{ cook.name }}</h5>
+    				<h5 class="card-title">{{ cook.firstname }} {{ cook.name }}</h5>
     				<p class="card-text">{{ cook.description }}</p>
-    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn bouton">Les produits</a>
-    				<a href="#" class="btn  bouton ">Les Menus</a>
+    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn bouton">Ses produits</a>
+    				<a href="{{ path('cook_show_menus', {id: cook.id }) }}" class="btn  bouton ">Ses menus</a>
   			</div>
 		</div>
 	</div>

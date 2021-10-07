@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Menu;
+use App\Entity\User;
 use App\Repository\MenuRepository;
 use App\Repository\ProductRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,7 +16,6 @@ class MenuController extends AbstractController
 {  
     public function listAction(MenuRepository $menuRepository): Response
     {
-        // dd($menuRepository->findAll());
         return $this->render('menu/index.html.twig', [
             'menus' => $menuRepository->findAll(),
         ]);
@@ -27,4 +27,10 @@ class MenuController extends AbstractController
             'menu' => $menu,                
         ]);
     }
+    
+    public function showMenusAction(MenuRepository $menuRepository, User $chief)
+	{				
+		return $this->render('cook/show.menu.html.twig',
+		 ['menus' => $menuRepository->findByChief($chief)]);
+	}
 }

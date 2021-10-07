@@ -3,13 +3,16 @@
 {% block title %}Liste des menus{% endblock %}
 
 {% block body %}
-    <h1>Tous les menus</h1>
+<div class="container tm-menu_list">
+    <h1 class="text-center my-5 text-warning">Tous les menus</h1>
 
     {% if is_granted('ROLE_CHEF') %}
-    <a href="{{ path('menu_create', {'id': app.user.id}) }}">Create new</a>
+    <p class="my-3 mb-3 text-center tm-button_create">
+    <a class="btn btn-success" href="{{ path('menu_create', {'id': app.user.id}) }}">Créer un menu</a>
+    </p>
     {% endif %}
 
-    <table class="table">
+    <table class="table dd_menu table-striped">
         <thead>
             <tr>
                 <th>Nom</th>
@@ -24,14 +27,14 @@
             <tr>
             
                 <td>{{ menu.name }}</td>
-                <td>{{ menu.price }}</td>
+                <td>{{ menu.price }} €</td>
                 <td>{{ menu.genre.genre }}</td>
                 <td>{{ menu.chief.firstname }} {{ menu.chief.name }}</td>
 
                 <td>
-                    <a href="{{ path('menu_show', {'id': menu.id}) }}">Détails</a>
+                    <a class="btn btn-success" href="{{ path('menu_show', {'id': menu.id}) }}">Détails du menu</a>
                     {% if is_granted('ROLE_CHEF') and menu.chief.id == app.user.id  %}
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">Modifiez votre menu</a> 
+                    <a class="btn btn-warning ms-2 my-1" href="{{ path('menu_edit', {'id': menu.id}) }}">Modifiez votre menu</a> 
                     {% endif %}
                 </td>
             </tr>
@@ -43,5 +46,5 @@
         </tbody>
     </table>
 
-    {#  #}
+</div>
 {% endblock %}
