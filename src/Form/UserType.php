@@ -31,36 +31,42 @@ class UserType extends AbstractType
                 'mapped' => false,
                 'invalid_message' => 'The password fields must match.',
                 'required' => true,
-                'first_options'  => [
-                    'label' => 'Mot de passe',
-                    'attr' => ['class' => 'form-control'],
-                    'constraints' => [
-                        new NotBlank([
-                            'message' => 'Entrez un mot de passe',
-                        ]),
-                        new Length([
-                            'min' => 6,
-                            'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
-                            // max length allowed by Symfony for security reasons
-                            'max' => 255,
-                        ]),
-                    ]
-                ],
+                'first_options'  => ['label' => 'Mot de passe',
+                                    'attr' => ['class' => 'form-control'],
+                                    'constraints' => [
+                                    new NotBlank([
+                                        'message' => 'Entrez un mot de passe',
+                                    ]),
+                                    new Length([
+                                        'min' => 6,
+                                        'minMessage' => 'Votre mot de passe doit comporter au moins {{ limit }} caractères',
+                                        // max length allowed by Symfony for security reasons
+                                        'max' => 255,
+                                    ]),
+                                ]],
                 'second_options' => ['label' => 'Confirmez en inscrivant votre mot de passe',
-                'attr' => ['class' => 'form-control'],
-            ],
+                                    'attr' => ['class' => 'form-control'],
+                ],
             ])
 
             ->add('phone', null, ['label' => 'Téléphone'])
             ->add('birthday', DateType::class, [
                 'label' => 'Date de naissance',
                 'widget' => 'single_text',
+                ])
+            ->add('description', TextareaType::class, [
+                'required' => false,
+                'label' => 'Décrivez vous en quelques mots ! ( 255 caractères maximum )',
+                'attr' => ['class' => 'w-100',
+                'rows' => '5',
+                ],
             ])
-            ->add('file', FileType::class, [
+            ->add('file',FileType::class, [
                 'mapped' => false,
                 'label' => 'Photo de profil',
                 'required' => false,
-            ])
+                ])
+  
             ->add('submit', SubmitType::class, [
                 'label' => 'Modifier',
                 'attr' => ['class' => 'btn '],

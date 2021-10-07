@@ -11,6 +11,10 @@ about:
   path: /about
   controller: App\Controller\AboutController::indexAction
 
+cgu:
+  path: /cgu
+  controller: App\Controller\CguController::indexAction
+
 cook:
   path: /cook/list
   controller: App\Controller\CookController::listAction
@@ -46,3 +50,11 @@ menu_show:
 menu_create:
   path: /chef/{id}/new/menu
   controller: App\Controller\Chef\ChefMenuController::newAction
+
+menu_edit:
+  path: /chef/edit/menu/{id}
+  controller: App\Controller\Chef\ChefMenuController::editAction
+
+menu_delete:
+  path: /chef/delete/menu/{id}
+  controller: App\Controller\Chef\ChefMenuController::deleteAction

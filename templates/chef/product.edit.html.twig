@@ -30,10 +30,10 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body text-white">
-                            <p>Êtes-vous sûr de vouloir supprimer ce produit: {{ product.name }}?</p>
+                            <p>Êtes-vous sûr de vouloir supprimer ce produit: {{ product.name }} ?</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn  btn-info " data-bs-dismiss="modal">Annuler</button>
+                            <button type="button" class="btn btn-info" data-bs-dismiss="modal">Annuler</button>
                             <a href="{{ path('chef_delete_product', {id: product.id}) }}"><button type="button" class="btn btn-danger">Supprimer</button></a>
                         </div>
                     </div>

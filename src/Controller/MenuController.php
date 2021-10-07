@@ -22,12 +22,9 @@ class MenuController extends AbstractController
     }
 
     public function showAction(Menu $menu): Response
-    {   
-       
-       
+    {        
         return $this->render('menu/show.html.twig', [
-            'menu' => $menu,
-                  
+            'menu' => $menu,                
         ]);
     }
 }

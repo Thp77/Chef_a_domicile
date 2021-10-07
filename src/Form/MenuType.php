@@ -29,6 +29,7 @@ class MenuType extends AbstractType
                 'label' => 'Apéritifs',
                 'multiple' => true, 
                 'mapped' => false, 
+                'required' => false,
                 'placeholder' => 'Choisissez vos apéritifs',
                 'expanded' => false,
                 'query_builder' => function (ProductRepository $productRepo) use ($user) {
@@ -45,6 +46,7 @@ class MenuType extends AbstractType
                 'label' => 'Entrées',
                 'multiple' => true, 
                 'mapped' => false,
+                'required' => false,
                 'placeholder' => 'Choisissez vos entrées',
                 'expanded' => false,
                 'query_builder' => function (ProductRepository $productRepo) use ($user) {
@@ -61,6 +63,7 @@ class MenuType extends AbstractType
                     'label' => 'Plats',
                     'multiple' => true, 
                     'mapped' => false,
+                    'required' => false,
                     'placeholder' => 'Choisissez vos plats',
                     'expanded' => false,
                     'query_builder' => function (ProductRepository $productRepo) use ($user) {
@@ -77,6 +80,7 @@ class MenuType extends AbstractType
                     'label' => 'Desserts',
                     'multiple' => true, 
                     'mapped' => false,
+                    'required' => false,
                     'placeholder' => 'Choisissez vos desserts',
                     'expanded' => false,
                     'query_builder' => function (ProductRepository $productRepo) use ($user) {

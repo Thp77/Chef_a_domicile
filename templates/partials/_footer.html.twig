@@ -1,0 +1,22 @@
+<!-- Mise en place du footer -->
+<footer class="d-md-flex text-center mt-4">
+	<div class="nav_footer d-flex">
+			<p><a href="{{ path('home') }}">Accueil</a></p>
+			<p><a href="{{ path('menu_list') }}">Menus</a></p>
+			<p><a href="{{ path('cook') }}">Cuisiniers</a></p>
+			<p><a href="{{ path('about') }}">À propos</a></p>
+	</div>
+	<div class="logo_footer mb-3">
+		<a class="navbar-brand" href="{{ path('home') }}"><svg id="lLogo" xmlns="http://www.w3.org/2000/svg" width="200" height="160" viewBox="0 0 220 198">
+		<text id="CADO" data-name="CADO" transform="translate(110 83)" fill="#fff" font-size="82" font-family="Impact" letter-spacing="0.057em"><tspan x="-45.859" y="0">CA</tspan><tspan x="-47.401" y="70">DO</tspan></text>
+		<text id="cuisinierà_domicile" data-name="cuisinier à domicile" transform="translate(0 170)" fill="#fff" font-size="23" font-family="Impact" letter-spacing="0.068em"><tspan x="0.986" y="23">cuisiniers à domicile</tspan></text></svg></a>
+	</div>
+	<div class="foot_right">
+		<div class="social">
+			<a href="https://www.facebook.com/groups/587172095012447" target="_blank" rel="nofollow" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/PaulBocuse" target="_blank" rel="nofollow" class="fa fa-twitter"></a>
+			<a href="https://www.instagram.com/recette_deouff/" class="fa fa-instagram" target="_blank" rel="nofollow"></a>
+		</div>
+		<p><a href="{{ path('cgu') }}">CGU</a></p>
+	</div>
+</footer>
