@@ -17,7 +17,7 @@ class ProductEditType extends AbstractType
     {
         $builder
             ->add('name', null, ['label' => 'Nom du met'] )
-            ->add('description', null, ['label' => 'Description du met'] )
+            ->add('description', null, ['label' => 'Description du met (max 255 caractères)'] )
             ->add('file',FileType::class, [
                 'mapped' => false,
                 'label' => 'Photo du met',

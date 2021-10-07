@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@font-face {
+    font-family: "Anton";
+    src: url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    ;
+}
+
 body {
     width: 100%;
     background-image: url(/images/crea.jpg);
@@ -75,7 +80,7 @@ footer .foot_right a {
     background-color: rgba(0, 0, 0, 0.637);
     color: rgba(245, 242, 237, 0.822);
     border-radius: 2em;
-    padding: 8em;
+    padding: 6em;
 }
 
 
@@ -115,8 +120,6 @@ footer .social .fa-instagram {
 
 /* Mise en page de la home et about (les 2 statiques) */
 
-.tm-home,
-.tm-about,
 .tm-prod,
 .tm-menu_detail {
     min-height: 57vh;
@@ -125,18 +128,28 @@ footer .social .fa-instagram {
 .tm-home .top1 {
     font-weight: 900;
     text-decoration: underline;
-    font-size: 1.8em;
-    color: rgb(240, 80, 80);
-    font-family: 'Oswald', sans-serif;
+    -webkit-text-decoration-color: rgb(248, 248, 248);
+    /* safari still uses vendor prefix */
+    text-decoration-color: rgb(248, 248, 248);
+    font-size: 1.7em;
+    color: rgb(233, 51, 51);
+    font-family: 'Anton', sans-serif;
+    width: 75%;
+    position: relative;
+    top: 1em;
 }
 
 .bord {
     margin-top: 1em;
     color: rgb(248, 248, 248);
-    margin-right: 1.4em;
-    font-size: 1.5em;
+    margin-right: 1.7em;
+    font-size: 1.8em;
     font-weight: 900;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Anton', sans-serif;
+    width: 22%;
+    position: absolute;
+    right: 0;
+    text-align: center;
 }
 
 
@@ -252,8 +265,20 @@ footer .social .fa-instagram {
 
 /* CSS de la page création de met */
 
-.dd_creat .select2 {
+.tm-selec {
     margin: 0 auto;
+}
+
+.tm-selec>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+#product_type,
+#product_edit_type {
+    max-width: 300px;
 }
 
 
@@ -349,7 +374,8 @@ input[type="checkbox"] {
 .tm-about,
 .tm-list_prod,
 .dd_creat,
-.dd_login {
+.dd_login,
+.tm-home {
     min-height: 62vh;
 }
 
