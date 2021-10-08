@@ -1,5 +1,5 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Nouveau met{% endblock %}
 {% block body %}
 
 <div class="container dd_creat">
@@ -17,10 +17,8 @@
         </div>
         <div class="mb-5 tm-selec">
                 {{ form_row(form.type, {'attr':{'class':'form-control'}}) }}
-        </div>
-        
-            {{ form_row(form.submit) }}
-        
+        </div>       
+            {{ form_row(form.submit) }}     
         {{ form_end(form) }}
     </div>
 </div>

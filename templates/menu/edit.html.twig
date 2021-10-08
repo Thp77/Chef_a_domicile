@@ -3,11 +3,31 @@
 {% block title %}Modifier le menu{% endblock %}
 
 {% block body %}
+<div class="container dd_creat3">
+    {{ form_start(form) }}
+    <div class="row">
     <h1>Modifier le menu</h1>
-
-    {{ include('menu/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('menu_list') }}">Retour à la liste</a>
-
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.name, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.price, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.aperitif, {'attr':{'class':'form-control text-center'}}) }}
+            {{ form_row(form.entree, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.plat, {'attr':{'class':'form-control text-center'}}) }}
+            {{ form_row(form.dessert, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec my-3">
+            {{ form_row(form.genre, {'attr':{'class':'form-control text-center'}}) }}
+        </div>      
+            {{ form_row(form.submit, {'attr':{'class':'mb-3 btn'}}) }}    
+        {{ form_end(form) }}
+    </div>
     {{ include('menu/_delete_form.html.twig') }}
+        <a class="mt-3" href="{{ path('menu_list') }}">Retour à la liste des menus</a>
+</div>
 {% endblock %}

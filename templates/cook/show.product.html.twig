@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
-{% block title %}Produits du chef{% endblock %}
+{% block title %}Mets du chef{% endblock %}
 
 {% block body %}
 <div class="tm-prod text-center">
 	{% if products %}
-		<h1 class="text-center">Les produits que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
+		<h1 class="text-center mt-5">Les mets que propose {{ products[0].chief.firstname }} {{ products[0].chief.name }}</h1>
 		{% for product in products %}	
 			<div class="card dd_prod  d-inline-flex align-items-center text-white my-5 mx-3" >
 				<div class="row g-0 ">
@@ -21,7 +21,8 @@
 			</div>
 		{% endfor %}
 	{% else %}
-		<h1 class="text-center text-warning">Ce chef ne propose pas encore de produit</h1>
+		<h1 class="text-center text-warning">Ce chef ne propose pas encore de met</h1>
 	{% endif %}
+	<button class="btn btn-warning" onclick="history.back()">Retour</button>
 </div>
 {% endblock %}

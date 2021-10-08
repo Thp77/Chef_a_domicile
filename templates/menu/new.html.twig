@@ -3,11 +3,31 @@
 {% block title %}Nouveau menu{% endblock %}
 
 {% block body %}
-    <h1>Créer votre menu</h1>
-
-    <h2>Pensez à enregistrer vos produits d'abord en cliquant <a href="{{ path('chef_list_products', { id: app.user.id }) }}">ici</a> !</h2>
-
-    {{ include('menu/_form.html.twig') }}
-
-    <a href="{{ path('menu_list') }}">Retour à la liste des menus</a>
+<div class="container dd_creat3">
+    {{ form_start(form) }}
+    <div class="row">
+        <h1>Créer votre menu</h1>
+        <h6>Pensez à enregistrer vos produits d'abord en cliquant <a href="{{ path('chef_list_products', { id: app.user.id }) }}">ici</a> !</h6>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.name, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.price, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.aperitif, {'attr':{'class':'form-control text-center'}}) }}
+            {{ form_row(form.entree, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec">
+            {{ form_row(form.plat, {'attr':{'class':'form-control text-center'}}) }}
+            {{ form_row(form.dessert, {'attr':{'class':'form-control text-center'}}) }}
+        </div>
+        <div class="col-12 col-md-6 tm-selec my-3">
+            {{ form_row(form.genre, {'attr':{'class':'form-control text-center'}}) }}
+        </div>      
+            {{ form_row(form.submit) }}    
+        {{ form_end(form) }}
+    <a class="mt-3" href="{{ path('menu_list') }}">Retour à la liste des menus</a>
+    </div>
+</div>
 {% endblock %}

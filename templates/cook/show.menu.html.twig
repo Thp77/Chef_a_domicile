@@ -4,7 +4,7 @@
 {% block body %}
 <div class="tm-prod text-center">
 	{% if menus %}
-		<h1 class="text-center">Les menus que propose {{ menus[0].chief.firstname }} {{ menus[0].chief.name }}</h1>
+		<h1 class="text-center my-5">Les menus que propose {{ menus[0].chief.firstname }} {{ menus[0].chief.name }}</h1>
 		{% for menu in menus %}	
 			<div class="card dd_prod  d-inline-flex align-items-center text-white my-5 mx-3" >
 				<div class="row g-0 ">
@@ -12,14 +12,16 @@
 					<div class="col-12 text-center">
 						<div class="card-body">
 							<h5 class="card-title">{{ menu.name }}</h5>
+							<p>{{ menu.price }} €</p>
 							<p class="card-text">{{ menu.genre.genre }}</p>
+							<a class="btn btn-success" href="{{ path('menu_show', {'id': menu.id}) }}">Détails du menu</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		{% endfor %}
 	{% else %}
-		<h1 class="text-center text-warning">Ce chef ne propose pas encore de menu</h1>
+		<h1 class="text-center text-warning my-5">Ce chef ne propose pas encore de menu</h1>
 	{% endif %}
 </div>
 {% endblock %}

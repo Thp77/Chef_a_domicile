@@ -273,6 +273,11 @@ footer .social .fa-instagram {
     align-items: center;
 }
 
+#menu_aperitif,
+#menu_entree,
+#menu_plat,
+#menu_dessert,
+#menu_genre,
 #product_type,
 #product_edit_type {
     max-width: 300px;
@@ -282,13 +287,10 @@ footer .social .fa-instagram {
 /* Ici on personnalise la page créer menu */
 
 .dd_creat3 {
-    display: flex;
     background-color: rgba(241, 241, 241, 0.568);
-    justify-content: center;
     text-align: center;
     border-radius: 1.25rem;
     padding: 1rem;
-    width: 50em;
     font-weight: bolder;
     border: rgba(228, 171, 66, 0.658) 5px solid;
 }
@@ -299,7 +301,8 @@ footer .social .fa-instagram {
 .dd_update,
 .dd_login,
 .dd_creat,
-.dd_creat2 {
+.dd_creat2,
+.dd_creat3 {
     display: grid;
     justify-content: space-evenly;
     background-color: rgba(241, 241, 241, 0.568);
@@ -318,6 +321,7 @@ footer .social .fa-instagram {
     background-color: rgb(231, 134, 78);
 }
 
+.dd_creat3 .btn_delete,
 .dd_creat .btn_delete {
     background-color: red!important;
 }
@@ -343,7 +347,7 @@ input[type="checkbox"] {
 /* mise en forme des cartes produits des chefs  */
 
 .tm-prod {
-    width: 90vw;
+    width: 95vw;
     margin: auto;
 }
 
@@ -354,7 +358,7 @@ input[type="checkbox"] {
 }
 
 .dd_prod {
-    width: 400px;
+    max-width: 350px !important;
 }
 
 
@@ -369,15 +373,18 @@ input[type="checkbox"] {
 }
 
 
-/* css création de nouveau produit */
+/* Ici on définit la hauteur */
 
 .tm-menu_list,
 .tm-about,
 .tm-list_prod,
 .dd_creat,
-.dd_login,
-.tm-home {
+.dd_login {
     min-height: 62vh;
+}
+
+.tm-home {
+    min-height: 51vh;
 }
 
 
@@ -407,6 +414,10 @@ input[type="checkbox"] {
 
 .tm-list_prod table tbody td {
     vertical-align: center;
+}
+
+.img-fitt {
+    height: 120px;
 }
 
 
@@ -443,6 +454,6 @@ input[type="checkbox"] {
     }
     .tm-home .top1 {
         width: 60%;
-        margin: 1.6em auto;
+        margin: 0.3em auto;
     }
 }
