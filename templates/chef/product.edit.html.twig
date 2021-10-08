@@ -21,6 +21,7 @@
         
             {{ form_row(form.submit) }}
         
+        <a data-bs-toggle="modal" data-bs-target="#deleteProductModal" href="{{ path('chef_delete_product', {id: product.id}) }}" class="btn btn-danger mt-3 btn_delete">Supprimer</a>
         {{ form_end(form) }}
     </div>
 </div>
