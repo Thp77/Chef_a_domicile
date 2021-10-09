@@ -30,7 +30,7 @@ class Main extends Fixture
         $user = new User();
         $user->setUsername('thierry74')
             ->setEmail('thierrymalherbe@live.fr')
-            ->setPassword($this->encoder->encodePassword($user, '0405DRAGan'))
+            ->setPassword($this->encoder->encodePassword($user, '123456'))
             ->setRoles(['ROLE_ADMIN'])
             ->setFirstname('Thierry')
             ->setName('Malherbe')
