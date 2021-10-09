@@ -32,6 +32,10 @@ class ProductRepository extends ServiceEntityRepository
 
         
       }
+
+     
+        
+      
     /*
     public function findByExampleField($value)
     {

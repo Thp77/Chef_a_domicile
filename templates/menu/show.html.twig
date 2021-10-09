@@ -3,32 +3,77 @@
 {% block title %}Le menu {{ menu.name }}{% endblock %}
 
 {% block body %}
-<div class="tm-menu_detail">
-    <h1>Le chef {{ menu.chief.firstname }} {{ menu.chief.name }} vous propose son menu {{ menu.name }} !</h1>
-
-    
-    <tr>
-                <th>Price</th>
-                <td>{{ menu.price }} € / menu</td>
-            </tr>
-    
+<h1 class="text-center text-warning my-5">Le cuisinier {{ menu.chief.firstname }} {{ menu.chief.name }} vous propose ce menu !</h1>
+<div class="tm-menu_detail ">
+    <h2 class="text-center ">{{ menu.name }}</h2>
+    <!-- Afficher les produits dont le type est apéritif -->
+    <!-- Vérifier si il existe des produits dont le produit.type.id est égal à 1 (Apéritif) -->
+    <h3 class="mb-5 mt-4" id="titre_aperitif">Apéritifs</h3>
+    <div id="div_aperitifs">
     {% for product in menu.products %}
-        
-        <h3>{{ product.type.type }}</h3>
-        <p>product: {{ product.name }}</p>
-        <p>price: {{ product.description }}</p>
-        <img src="{{ product.photo }}" alt="{{ product.name }}">
-        
-        
-
+        {% if product.type.id is same as(1) %}
+        <div class="prod_unite my-3">
+        <h4 class="text-center mb-3">{{ product.name }}</h4>
+        {{ product.photo|resizeForMenu(product.name)|raw  }} 
+        <p class="text-center mt-3">{{ product.description }}</p>
+        </div>
+        {% endif %}
     {% endfor %}
+    </div>
 
-    <p>Si le menu vous intéresse, veuillez contacter le cuisinier {{ menu.chief.firstname }} {{ menu.chief.name }} pour plus de détail directement par mail à : <b>{{ menu.chief.email }}</b></p>
+    <!-- Afficher les produits dont le type est entrée -->
+    <img src="/images/arabesque.png" alt="arabesque" id="arabesque_entree" class="arabesque mt-3">
+    <h3 class="mb-5" id="titre_entree">Entrées</h3>
+    <div id="div_entrees">
+    {% for product in menu.products %}
+        {% if product.type.id is same as(2) %}
+        <div class="prod_unite my-3">
+        <h4 class="text-center mb-3">{{ product.name }}</h4>
+        {{ product.photo|resizeForMenu(product.name)|raw  }} 
+        <p class="text-center mt-3">{{ product.description }}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
 
-    <button class="btn btn-warning" onclick="history.back()">Retour</button>
+    <!-- Afficher les produits dont le type est plat -->
+    <img src="/images/arabesque.png" alt="arabesque" id="arabesque_plat" class="arabesque mt-3">
+    <h3 class="mb-5" id="titre_plat">Plats</h3>
+    <div id="div_plats">
+    {% for product in menu.products %}
+        {% if product.type.id is same as(3) %}
+        <div class="prod_unite my-3">
+        <h4 class="text-center mb-3">{{ product.name }}</h4>
+        {{ product.photo|resizeForMenu(product.name)|raw  }} 
+        <p class="text-center mt-3">{{ product.description }}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
 
-    {# <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a> #}
+    <!-- Afficher les produits dont le type est entrée -->
+    <img src="/images/arabesque.png" alt="arabesque" id="arabesque_dessert" class="arabesque mt-3">
+    <h3 class="mb-5" id="titre_dessert">Desserts</h3>
+    <div id="div_desserts">
+    {% for product in menu.products %}
+        {% if product.type.id is same as(4) %}
+        <div class="prod_unite my-3">
+        <h4 class="text-center mb-3">{{ product.name }}</h4>
+        {{ product.photo|resizeForMenu(product.name)|raw  }} 
+        <p class="text-center mt-3">{{ product.description }}</p>
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+    
+    <!-- Affichage du bas du menu -->
+    <img src="/images/arabesque.png" alt="arabesque" class="arabesque mt-5 last_arabesque">
+    <h4 class="text-center mb-4">Ce menu coûte {{ menu.price }} € par personne</h4>    
+    <h4 class="text-center mb-4">Si ce menu vous intéresse, veuillez contacter le cuisinier {{ menu.chief.firstname }} {{ menu.chief.name }} pour plus de détails directement par mail à : <b>{{ menu.chief.email }}</b></h4>
 
-
+    <span class="text-center d-block"><button class="btn btn-warning" onclick="history.back()">Retour</button></span>
 </div>
+{% endblock %}
+{% block javascripts %}
+<script defer src="{{ asset('js/theMenu.js') }}"></script>
 {% endblock %}
