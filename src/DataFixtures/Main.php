@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use Faker;
+// use Faker;
 use App\Entity\Menu;
 use App\Entity\Type;
 use App\Entity\User;
@@ -25,52 +25,52 @@ class Main extends Fixture
     
     public function load(ObjectManager $manager)
     {
-        $faker = Faker\Factory::create();
+       // $faker = Faker\Factory::create();
 
         $user = new User();
         $user->setUsername('thierry74')
-            ->setEmail('thierry@titi.fr')
-            ->setPassword($this->encoder->encodePassword($user, 'thierry1234'))
+            ->setEmail('thierrymalherbe@live.fr')
+            ->setPassword($this->encoder->encodePassword($user, '0405DRAGan'))
             ->setRoles(['ROLE_ADMIN'])
-            ->setFirstname('thierry')
+            ->setFirstname('Thierry')
             ->setName('Malherbe')
-            ->setPhone('0612421242')
+            ->setPhone('0679451872')
             ->setBirthday(new DateTimeImmutable('1986-01-28')) 
             ;
         $manager->persist($user);
         $manager->flush();
 
-        for ($u = 0; $u < 6; $u++) {
-            $user = new User();
-            $user->setUsername($faker->userName)
-            ->setEmail($faker->email)
-            ->setPassword($this->encoder->encodePassword($user, '123456'))
-            ->setRoles(['ROLE_USER'])
-            ->setFirstname($faker->firstName($gender = null))
-            ->setName($faker->lastName)
-            ->setPhone($faker->phoneNumber)
-            ->setBirthday(new DateTimeImmutable($faker->date($format = 'Y-m-d', $max = 'now')))
-            ->setPhoto("https://picsum.photos/seed/". rand(0,5000) ."/800/400");
+        // for ($u = 0; $u < 6; $u++) {
+        //     $user = new User();
+        //     $user->setUsername($faker->userName)
+        //     ->setEmail($faker->email)
+        //     ->setPassword($this->encoder->encodePassword($user, '123456'))
+        //     ->setRoles(['ROLE_USER'])
+        //     ->setFirstname($faker->firstName($gender = null))
+        //     ->setName($faker->lastName)
+        //     ->setPhone($faker->phoneNumber)
+        //     ->setBirthday(new DateTimeImmutable($faker->date($format = 'Y-m-d', $max = 'now')))
+        //     ->setPhoto("https://picsum.photos/seed/". rand(0,5000) ."/800/400");
             
-            $manager->persist($user);
-            $manager->flush();
-        }
+        //     $manager->persist($user);
+        //     $manager->flush();
+        // }
         
-        for ($u = 0; $u < 6; $u++) {
-            $user = new User();
-            $user->setUsername($faker->userName)
-            ->setEmail($faker->email)
-            ->setPassword($this->encoder->encodePassword($user, '123456'))
-            ->setRoles(['ROLE_CHEF'])
-            ->setFirstname($faker->firstName($gender = null))
-            ->setName($faker->lastName)
-            ->setPhone($faker->phoneNumber)
-            ->setBirthday(new DateTimeImmutable($faker->date($format = 'Y-m-d', $max = 'now')))
-            ->setPhoto("https://picsum.photos/seed/". rand(0,5000) ."/800/400");
+        // for ($u = 0; $u < 6; $u++) {
+        //     $user = new User();
+        //     $user->setUsername($faker->userName)
+        //     ->setEmail($faker->email)
+        //     ->setPassword($this->encoder->encodePassword($user, '123456'))
+        //     ->setRoles(['ROLE_CHEF'])
+        //     ->setFirstname($faker->firstName($gender = null))
+        //     ->setName($faker->lastName)
+        //     ->setPhone($faker->phoneNumber)
+        //     ->setBirthday(new DateTimeImmutable($faker->date($format = 'Y-m-d', $max = 'now')))
+        //     ->setPhoto("https://picsum.photos/seed/". rand(0,5000) ."/800/400");
             
-            $manager->persist($user);
-            $manager->flush();
-        }
+        //     $manager->persist($user);
+        //     $manager->flush();
+        // }
         
         $type = new Type();
         $type->setType('Apéritif');
@@ -112,16 +112,16 @@ class Main extends Fixture
         $manager->persist($genre);
         $manager->flush();
 
-        for ($p = 0; $p < 32; $p++) {
-            $product = new Product();
-            $product->setName($faker->words(4, true))
-                ->setDescription($faker->realText(250,2))
-                ->setPhoto("https://picsum.photos/seed/". rand(0,5000) ."/800/400")
-                ->setType($manager->getRepository(Type::class)->find(rand(1,4)))
-                ->setChief($manager->getRepository(User::class)->find(rand(8,13)));
-            $manager->persist($product);
-            $manager->flush();
-        }
+        // for ($p = 0; $p < 32; $p++) {
+        //     $product = new Product();
+        //     $product->setName($faker->words(4, true))
+        //         ->setDescription($faker->realText(250,2))
+        //         ->setPhoto("https://picsum.photos/seed/". rand(0,5000) ."/800/400")
+        //         ->setType($manager->getRepository(Type::class)->find(rand(1,4)))
+        //         ->setChief($manager->getRepository(User::class)->find(rand(8,13)));
+        //     $manager->persist($product);
+        //     $manager->flush();
+        // }
 
         // for ($m = 0; $m < 8; $m++) {
         //     $menu = new Menu();
