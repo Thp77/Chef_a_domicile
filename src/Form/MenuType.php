@@ -22,7 +22,11 @@ class MenuType extends AbstractType
         $builder
             ->add('name')
             ->add('price', IntegerType::class)
-            ->add('genre', EntityType::class, ['class' => Genre::class, 'choice_label' => 'genre', 'multiple' => false, 'expanded' => false])
+            ->add('genre', EntityType::class, [
+                'class' => Genre::class, 
+                'choice_label' => 'genre', 
+                'multiple' => false, 
+                'expanded' => false])
             ->add('aperitif', EntityType::class, [
                 'class' => Product::class, 
                 'choice_label' => 'name', 
@@ -65,7 +69,7 @@ class MenuType extends AbstractType
                     'mapped' => false,
                     'required' => false,
                     'placeholder' => 'Choisissez vos plats',
-                    'expanded' => false,
+                    'expanded' => false,                 
                     'query_builder' => function (ProductRepository $productRepo) use ($user) {
                         return $productRepo->createQueryBuilder('p')
                         ->join('p.type', 't')
@@ -92,7 +96,7 @@ class MenuType extends AbstractType
                         ->setParameter('chiefId', $user->getId());
                     },])
             ->add('submit', SubmitType::class, ['label' => 'Enregistrer',
-            'attr' => ['class' => 'btn btn-success'],
+            'attr' => ['class' => 'btn'],
             ])
         ;
     }

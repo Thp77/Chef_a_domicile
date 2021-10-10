@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -65,6 +66,15 @@ class UserType extends AbstractType
                 'mapped' => false,
                 'label' => 'Photo de profil',
                 'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1500k',
+                        'mimeTypes' => [
+                            'image/*',
+                        ],
+                        'mimeTypesMessage' => 'Votre fichier n\'est pas une image',
+                    ])
+                ],
                 ])
   
             ->add('submit', SubmitType::class, [

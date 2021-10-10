@@ -19,6 +19,8 @@ class MenuRepository extends ServiceEntityRepository
         parent::__construct($registry, Menu::class);
     }
 
+   
+
     // /**
     //  * @return Menu[] Returns an array of Menu objects
     //  */

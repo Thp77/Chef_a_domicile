@@ -23,6 +23,10 @@ cook_show_products:
   path: cook/{id}/products
   controller: App\Controller\ProductController::showProductsAction
 
+cook_show_menus:
+  path: cook/{id}/menus
+  controller: App\Controller\MenuController::showMenusAction
+
 chef_new_product:
   path: /chef/{id}/new/products
   controller: App\Controller\Chef\ChefProductController::newAction

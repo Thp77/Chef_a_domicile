@@ -1,26 +1,26 @@
 {% extends 'base.html.twig' %}
-
+{% block title %}Nouveau met{% endblock %}
 {% block body %}
 
 <div class="container dd_creat">
-{{ form_start(form) }}
     <div class="row">
-        <div class="col-12">
+        <h1 class="">Créer un nouveau met</h1>
+    {{ form_start(form) }}
+        <div class="col-12 my-3">
             {{ form_row(form.name, {'attr':{'class':'form-control'}}) }}
+        </div>
+        <div class="col-12 mb-3">
             {{ form_row(form.description, {'attr':{'class':'form-control'}}) }}
         </div>
-        <div class="col-12 mt-5">
+        <div class="col-12 mb-3">
             {{ form_row(form.file, {'attr':{'class':'form-control'}}) }}
         </div>
-        <div class="col-4 mt-5">
+        <div class="mb-5 tm-selec">
                 {{ form_row(form.type, {'attr':{'class':'form-control'}}) }}
-        </div>
-        <div class="col-lg-6 col-md-4 mt-5">
-
-            {{ form_row(form.submit) }}
-        </div>
+        </div>       
+            {{ form_row(form.submit) }}     
         {{ form_end(form) }}
     </div>
-
 </div>
+
 {% endblock %}

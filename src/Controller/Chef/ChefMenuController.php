@@ -79,6 +79,11 @@ class ChefMenuController extends AbstractController
                 $menu->addProduct($entree);
             }
 
+            $plats = $form['plat']->getData();
+            foreach ($plats as $plat) {
+                $menu->addProduct($plat);
+            }
+
             $desserts = $form['dessert']->getData();
             foreach ($desserts as $dessert) {
                 $menu->addProduct($dessert);
