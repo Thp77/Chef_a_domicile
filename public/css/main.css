@@ -317,6 +317,15 @@
         }
         /* mise en forme des cartes produits des chefs  */
         
+
+        #DataTables_Table_0_previous, #DataTables_Table_0_next{
+
+            color: rgb(250, 173, 58)!important;
+            font-size: 20px;
+
+        }
+
+
         .tm-prod {
             width: 95vw;
             margin: auto;
@@ -342,6 +351,12 @@
         }
         /* Css de la présentation des menus */
         
+
+
+
+
+
+
         .tm-menu_detail {
             background-color: rgba(184, 184, 184, 0.568);
             justify-content: center;

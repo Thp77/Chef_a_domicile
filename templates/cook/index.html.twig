@@ -14,8 +14,8 @@
  			 <div class="card-body text-center">
     				<h5 class="card-title">{{ cook.firstname }} {{ cook.name }}</h5>
     				<p class="card-text">{{ cook.description }}</p>
-    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn bouton">Ses produits</a>
-    				<a href="{{ path('cook_show_menus', {id: cook.id }) }}" class="btn  bouton ">Ses menus</a>
+    				<a href="{{ path('cook_show_products', {id: cook.id }) }}" class="btn bouton">Les produits</a>
+    				<a href="{{ path('menu_list') }}" class="btn  bouton ">Les Menus</a>
   			</div>
 		</div>
 	</div>
